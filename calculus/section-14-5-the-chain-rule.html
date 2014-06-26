@@ -1,0 +1,550 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>section-14-5-the-chain-rule</title>
+<style type="text/css">
+/* <![CDATA[ */
+span.S0, a.S0 { font-family:sans-serif; font-size:11pt; font-style:normal; font-weight:normal; color:#000000; }
+span.S1, a.S1 { font-family:monospace; font-size:11pt; font-style:normal; font-weight:normal; color:#ff0000; }
+span.S2, a.S2 { font-family:monospace; font-size:11pt; font-style:normal; font-weight:normal; color:#5500ff; }
+p.P0 { text-align:justify; margin-top:0pt; margin-left:0pt; margin-right:0pt; margin-bottom:0pt; text-indent:0pt; }
+p.P1 { text-align:left; white-space:pre; margin-top: 0; margin-left: 0; margin-right: 0; margin-bottom: 0; }
+div.C2 { padding-top:0pt; padding-bottom:0pt; padding-left:5.7pt; border-left-width:1pt; border-left-style: solid; border-color: #808080; border-right-width: 0; border-right-style: none; border-top-width: 0; border-top-style: none; border-bottom-width: 0; border-bottom-style: none; }
+div.Csep3in { padding: 0; height: 0; width: 5pt; border-bottom: 1px solid #808080; margin-top:2.85pt; margin-bottom: 0; }
+div.Csep3out { padding: 0; height: 0; width: 3pt; border-bottom: 1px solid #808080; margin-top: 0;  margin-bottom: 0; }
+div.Csep3end { padding: 0; height: 0; width: 5pt; border-bottom: 1px solid #808080; margin-bottom:2.85pt; margin-top: 0; }
+p.P4 { margin-top:0pt; margin-left:0pt; margin-right:0pt; margin-bottom:0pt; text-indent:0pt; }
+body { background-color:white; }
+@page { margin:56pt; size:612pt 792pt; background-color:white; }
+/* ]]> */
+</style>
+</head>
+<body>
+<p class="P0">&nbsp;</p>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(tan(x/y)^-1, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-(tan(x/y)^2 + 1)/(y*tan(x/y)^2)" style="vertical-align:-20px" width="73" height="44" src="section-14-5-the-chain-rule_images/math0.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">tan(x)^-1</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1/tan(x)" style="vertical-align:-15px" width="38" height="30" src="section-14-5-the-chain-rule_images/math1.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1/tan(x)" style="vertical-align:-15px" width="38" height="30" src="section-14-5-the-chain-rule_images/math2.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(tan(x)^-1, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-(tan(x)^2 + 1)/tan(x)^2" style="vertical-align:-17px" width="70" height="38" src="section-14-5-the-chain-rule_images/math3.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(tan(y/x)^-1, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(y*(tan(y/x)^2 + 1))/(x^2*tan(y/x)^2)" style="vertical-align:-19px" width="77" height="42" src="section-14-5-the-chain-rule_images/math4.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(tan(x), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="tan(x)^2 + 1" style="vertical-align:-7px" width="58" height="23" src="section-14-5-the-chain-rule_images/math5.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(x*(E^(y/z)), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="exp(y/z)" style="vertical-align:-7px" width="26" height="24" src="section-14-5-the-chain-rule_images/math6.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(x*(E^(y/z)), y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(x*exp(y/z))/z" style="vertical-align:-12px" width="36" height="34" src="section-14-5-the-chain-rule_images/math7.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(x*(E^(y/z)), z)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-(x*y*exp(y/z))/z^2" style="vertical-align:-16px" width="54" height="38" src="section-14-5-the-chain-rule_images/math8.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">7^3</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="343" style="vertical-align:-7px" width="27" height="20" src="section-14-5-the-chain-rule_images/math9.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">4*343</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1372" style="vertical-align:-7px" width="32" height="20" src="section-14-5-the-chain-rule_images/math10.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">14*16</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="224" style="vertical-align:-7px" width="27" height="20" src="section-14-5-the-chain-rule_images/math11.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">1372+224</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1596" style="vertical-align:-7px" width="32" height="20" src="section-14-5-the-chain-rule_images/math12.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%*3</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="4788" style="vertical-align:-7px" width="32" height="20" src="section-14-5-the-chain-rule_images/math13.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%+98</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="4886" style="vertical-align:-7px" width="32" height="20" src="section-14-5-the-chain-rule_images/math14.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">14*8</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="112" style="vertical-align:-7px" width="26" height="20" src="section-14-5-the-chain-rule_images/math15.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">1372+112</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1484" style="vertical-align:-7px" width="32" height="20" src="section-14-5-the-chain-rule_images/math16.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%*3</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="4452" style="vertical-align:-7px" width="32" height="20" src="section-14-5-the-chain-rule_images/math17.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">+98</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="98" style="vertical-align:-7px" width="21" height="20" src="section-14-5-the-chain-rule_images/math18.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">4452+98</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="4550" style="vertical-align:-7px" width="32" height="20" src="section-14-5-the-chain-rule_images/math19.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">7^2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="49" style="vertical-align:-7px" width="21" height="20" src="section-14-5-the-chain-rule_images/math20.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">49*2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="98" style="vertical-align:-7px" width="21" height="20" src="section-14-5-the-chain-rule_images/math21.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">7^3</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="343" style="vertical-align:-7px" width="27" height="20" src="section-14-5-the-chain-rule_images/math22.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%*4</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1372" style="vertical-align:-7px" width="32" height="20" src="section-14-5-the-chain-rule_images/math23.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(x^4 + x^2*y, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="4*x^3 + 2*y*x" style="vertical-align:-7px" width="62" height="23" src="section-14-5-the-chain-rule_images/math24.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(x^4 + x^2*y, y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="x^2" style="vertical-align:-7px" width="19" height="23" src="section-14-5-the-chain-rule_images/math25.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">x:= s+(2*t)-u</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="s + 2*t - u" style="vertical-align:-7px" width="56" height="20" src="section-14-5-the-chain-rule_images/math26.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">y:=s*t*u^2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="s*t*u^2" style="vertical-align:-7px" width="33" height="23" src="section-14-5-the-chain-rule_images/math27.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">4*x^3 + 2*x*y</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="4*(s + 2*t - u)^3 + 2*s*t*u^2*(s + 2*t - u)" style="vertical-align:-7px" width="178" height="23" src="section-14-5-the-chain-rule_images/math28.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%*(2*t - u)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(2*t - u)*(4*(s + 2*t - u)^3 + 2*s*t*u^2*(s + 2*t - u))" style="vertical-align:-7px" width="227" height="23" src="section-14-5-the-chain-rule_images/math29.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">q:=%</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(2*t - u)*(4*(s + 2*t - u)^3 + 2*s*t*u^2*(s + 2*t - u))" style="vertical-align:-7px" width="227" height="23" src="section-14-5-the-chain-rule_images/math30.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">x^2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(s + 2*t - u)^2" style="vertical-align:-7px" width="68" height="23" src="section-14-5-the-chain-rule_images/math31.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%*(t*u^2)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="t*u^2*(s + 2*t - u)^2" style="vertical-align:-7px" width="87" height="23" src="section-14-5-the-chain-rule_images/math32.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">q+%</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(2*t - u)*(4*(s + 2*t - u)^3 + 2*s*t*u^2*(s + 2*t - u)) + t*u^2*(s + 2*t - u)^2" style="vertical-align:-7px" width="316" height="23" src="section-14-5-the-chain-rule_images/math33.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(2*t - u)*(4*(s + 2*t - u)^3 + 2*s*t*u^2*(s + 2*t - u)) + t*u^2*(s + 2*t - u)^2" style="vertical-align:-7px" width="316" height="23" src="section-14-5-the-chain-rule_images/math34.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">16*7</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="112" style="vertical-align:-7px" width="26" height="20" src="section-14-5-the-chain-rule_images/math35.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">4*343</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1372" style="vertical-align:-7px" width="32" height="20" src="section-14-5-the-chain-rule_images/math36.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">1372+112</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1484" style="vertical-align:-7px" width="32" height="20" src="section-14-5-the-chain-rule_images/math37.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%*3</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="4452" style="vertical-align:-7px" width="32" height="20" src="section-14-5-the-chain-rule_images/math38.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%+98</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="4550" style="vertical-align:-7px" width="32" height="20" src="section-14-5-the-chain-rule_images/math39.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">1484*5</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="7420" style="vertical-align:-7px" width="32" height="20" src="section-14-5-the-chain-rule_images/math40.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">49*4</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="196" style="vertical-align:-7px" width="27" height="20" src="section-14-5-the-chain-rule_images/math41.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%+7420</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="7616" style="vertical-align:-7px" width="32" height="20" src="section-14-5-the-chain-rule_images/math42.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">1484*7</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="10388" style="vertical-align:-7px" width="38" height="20" src="section-14-5-the-chain-rule_images/math43.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%+(49*16)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="11172" style="vertical-align:-7px" width="37" height="20" src="section-14-5-the-chain-rule_images/math44.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">cos(PI/2)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="0" style="vertical-align:-7px" width="16" height="20" src="section-14-5-the-chain-rule_images/math45.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">sin(PI/2)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1" style="vertical-align:-7px" width="16" height="20" src="section-14-5-the-chain-rule_images/math46.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">x+x*y^2-tan(x^2*y)^-1</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="s + 2*t - u - 1/tan(s*t*u^2*(s + 2*t - u)^2) + s^2*t^2*u^4*(s + 2*t - u)" style="vertical-align:-17px" width="275" height="33" src="section-14-5-the-chain-rule_images/math47.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">reset()</span></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">x+x*y^2-tan(x^2*y)^-1</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="x - 1/tan(x^2*y) + x*y^2" style="vertical-align:-17px" width="96" height="33" src="section-14-5-the-chain-rule_images/math48.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(%, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="y^2 + (2*x*y*(tan(x^2*y)^2 + 1))/tan(x^2*y)^2 + 1" style="vertical-align:-17px" width="144" height="38" src="section-14-5-the-chain-rule_images/math49.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a:=%</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="y^2 + (2*x*y*(tan(x^2*y)^2 + 1))/tan(x^2*y)^2 + 1" style="vertical-align:-17px" width="144" height="38" src="section-14-5-the-chain-rule_images/math50.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(x+x*y^2-tan(x^2*y)^-1, y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="2*x*y + (x^2*(tan(x^2*y)^2 + 1))/tan(x^2*y)^2" style="vertical-align:-17px" width="126" height="38" src="section-14-5-the-chain-rule_images/math51.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(-a)/%</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-(y^2 + (2*x*y*(tan(x^2*y)^2 + 1))/tan(x^2*y)^2 + 1)/(2*x*y + (x^2*(tan(x^2*y)^2 + 1))/tan(x^2*y)^2)" style="vertical-align:-28px" width="135" height="60" src="section-14-5-the-chain-rule_images/math52.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-(4*x*y - y^2*cos(2*x^2*y) - cos(2*x^2*y) + y^2 + 1)/(2*x*(x + y - y*cos(2*x^2*y)))" style="vertical-align:-17px" width="217" height="38" src="section-14-5-the-chain-rule_images/math53.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(a)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="2*x*y + y^2 + (2*x*y)/tan(x^2*y)^2 + 1" style="vertical-align:-17px" width="127" height="35" src="section-14-5-the-chain-rule_images/math54.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(x + (x*y) - (E^y)*sin(x), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="y - exp(y)*cos(x) + 1" style="vertical-align:-7px" width="85" height="22" src="section-14-5-the-chain-rule_images/math55.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(x + (x*y) - (E^y)*sin(x), y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="x - exp(y)*sin(x)" style="vertical-align:-7px" width="65" height="22" src="section-14-5-the-chain-rule_images/math56.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1">&nbsp;</p>
+</div>
+<div class="Csep3end"></div>
+<p class="P4">&nbsp;</p>
+</body>
+</html>

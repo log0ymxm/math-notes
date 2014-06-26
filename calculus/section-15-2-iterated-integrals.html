@@ -1,0 +1,662 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>section-15-2-iterated-integrals</title>
+<style type="text/css">
+/* <![CDATA[ */
+span.S0, a.S0 { font-family:sans-serif; font-size:11pt; font-style:normal; font-weight:normal; color:#000000; }
+span.S1, a.S1 { font-family:monospace; font-size:11pt; font-style:normal; font-weight:normal; color:#ff0000; }
+span.S2, a.S2 { font-family:monospace; font-size:11pt; font-style:normal; font-weight:normal; color:#5500ff; }
+p.P0 { text-align:justify; margin-top:0pt; margin-left:0pt; margin-right:0pt; margin-bottom:0pt; text-indent:0pt; }
+p.P1 { text-align:left; white-space:pre; margin-top: 0; margin-left: 0; margin-right: 0; margin-bottom: 0; }
+div.C2 { padding-top:0pt; padding-bottom:0pt; padding-left:5.7pt; border-left-width:1pt; border-left-style: solid; border-color: #808080; border-right-width: 0; border-right-style: none; border-top-width: 0; border-top-style: none; border-bottom-width: 0; border-bottom-style: none; }
+div.Csep3in { padding: 0; height: 0; width: 5pt; border-bottom: 1px solid #808080; margin-top:2.85pt; margin-bottom: 0; }
+div.Csep3out { padding: 0; height: 0; width: 3pt; border-bottom: 1px solid #808080; margin-top: 0;  margin-bottom: 0; }
+div.Csep3end { padding: 0; height: 0; width: 5pt; border-bottom: 1px solid #808080; margin-bottom:2.85pt; margin-top: 0; }
+p.P4 { margin-top:0pt; margin-left:0pt; margin-right:0pt; margin-bottom:0pt; text-indent:0pt; }
+body { background-color:white; }
+@page { margin:56pt; size:612pt 792pt; background-color:white; }
+/* ]]> */
+</style>
+</head>
+<body>
+<p class="P0">&nbsp;</p>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(6*x^2 * y - 2*x, y=0..2)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="4*x*(3*x - 1)" style="vertical-align:-7px" width="67" height="21" src="section-15-2-iterated-integrals_images/math0.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, x=1..4)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="222" style="vertical-align:-7px" width="27" height="20" src="section-15-2-iterated-integrals_images/math1.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">y^3 * E^(2*x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="y^3*exp(2*x)" style="vertical-align:-7px" width="37" height="24" src="section-15-2-iterated-integrals_images/math2.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, y=0..4)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="64*exp(2*x)" style="vertical-align:-7px" width="39" height="24" src="section-15-2-iterated-integrals_images/math3.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, x=0..2)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="32*exp(4) - 32" style="vertical-align:-7px" width="56" height="23" src="section-15-2-iterated-integrals_images/math4.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(cos(y), x=-1..5)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="6*cos(y)" style="vertical-align:-7px" width="47" height="21" src="section-15-2-iterated-integrals_images/math5.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, y=PI/6..PI/2)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="3" style="vertical-align:-7px" width="16" height="20" src="section-15-2-iterated-integrals_images/math6.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(ln(x)/(x*y), y=1..5)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(ln(5)*ln(x))/x" style="vertical-align:-11px" width="60" height="30" src="section-15-2-iterated-integrals_images/math7.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, x=1..3)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(ln(3)^2*ln(5))/2" style="vertical-align:-11px" width="65" height="32" src="section-15-2-iterated-integrals_images/math8.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(ln(x)/(x*y), y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(ln(x)*ln(y))/x" style="vertical-align:-11px" width="59" height="30" src="section-15-2-iterated-integrals_images/math9.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(ln(y)/(x*y), y=1..5)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="ln(5)^2/(2*x)" style="vertical-align:-14px" width="39" height="35" src="section-15-2-iterated-integrals_images/math10.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, x=1..3)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(ln(3)*ln(5)^2)/2" style="vertical-align:-11px" width="65" height="32" src="section-15-2-iterated-integrals_images/math11.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(E^(x + 3*y), x=0..3)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="exp(3*y)*(exp(3) - 1)" style="vertical-align:-7px" width="63" height="24" src="section-15-2-iterated-integrals_images/math12.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, y=0..1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(exp(3) - 1)^2/3" style="vertical-align:-12px" width="51" height="33" src="section-15-2-iterated-integrals_images/math13.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(v* (u+v^2)^4, u=0..1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="v^9 + 2*v^7 + 2*v^5 + v^3 + v/5" style="vertical-align:-12px" width="120" height="28" src="section-15-2-iterated-integrals_images/math14.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, v=0..1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="31/30" style="vertical-align:-12px" width="23" height="28" src="section-15-2-iterated-integrals_images/math15.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(r * sin(x)^2, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(r*(2*x - sin(2*x)))/4" style="vertical-align:-11px" width="88" height="30" src="section-15-2-iterated-integrals_images/math16.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">expand(tan(x))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="tan(x)" style="vertical-align:-7px" width="36" height="21" src="section-15-2-iterated-integrals_images/math17.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">expand(tan(x)^-1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1/tan(x)" style="vertical-align:-15px" width="38" height="30" src="section-15-2-iterated-integrals_images/math18.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">cos(x)/sin(x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="cos(x)/sin(x)" style="vertical-align:-15px" width="40" height="34" src="section-15-2-iterated-integrals_images/math19.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="cos(x)/sin(x)" style="vertical-align:-15px" width="40" height="34" src="section-15-2-iterated-integrals_images/math20.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">r * sin(x)^2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="r*sin(x)^2" style="vertical-align:-7px" width="47" height="23" src="section-15-2-iterated-integrals_images/math21.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, x=0..PI)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(PI*r)/2" style="vertical-align:-11px" width="25" height="29" src="section-15-2-iterated-integrals_images/math22.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, r)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(PI*r^2)/4" style="vertical-align:-11px" width="29" height="32" src="section-15-2-iterated-integrals_images/math23.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">deriv(%, r)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="deriv((PI*r^2)/4, r)" style="vertical-align:-13px" width="79" height="35" src="section-15-2-iterated-integrals_images/math24.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int((PI*r)/2, r=0..2)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="PI" style="vertical-align:-7px" width="16" height="20" src="section-15-2-iterated-integrals_images/math25.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(sqrt(s + t), s)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(2*(s + t)^(3/2))/3" style="vertical-align:-12px" width="60" height="34" src="section-15-2-iterated-integrals_images/math26.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(sqrt(s + t), s=0..1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="piecewise([t in Dom::ImageSet(x*I, x, R_) or 0 &lt;= t, (2*(t + 1)^(3/2))/3 - (2*t^(3/2))/3], [not t in Dom::ImageSet(x*I, x, R_) and not 0 &lt;= t, int((s + t)^(1/2), s = 0..1)])" style="vertical-align:-19px" width="241" height="50" src="section-15-2-iterated-integrals_images/math27.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(sqrt(s + t), s)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(2*(s + t)^(3/2))/3" style="vertical-align:-12px" width="60" height="34" src="section-15-2-iterated-integrals_images/math28.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int((2*(1 + t)^(3/2))/3 - (2*t^(3/2))/3, t)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(8*t*(t + 1)^(1/2))/15 + (4*(t + 1)^(1/2))/15 + (4*t^2*(t + 1)^(1/2))/15 - (4*t^(5/2))/15" style="vertical-align:-12px" width="211" height="34" src="section-15-2-iterated-integrals_images/math29.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int((2*(1 + t)^(3/2))/3 - (2*t^(3/2))/3, t=0..1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(16*2^(1/2))/15 - 8/15" style="vertical-align:-12px" width="67" height="31" src="section-15-2-iterated-integrals_images/math30.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">2^(5/2)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="4*2^(1/2)" style="vertical-align:-7px" width="35" height="21" src="section-15-2-iterated-integrals_images/math31.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">2^5</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="32" style="vertical-align:-7px" width="21" height="20" src="section-15-2-iterated-integrals_images/math32.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(sin(x-y), y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="cos(x - y)" style="vertical-align:-7px" width="55" height="21" src="section-15-2-iterated-integrals_images/math33.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(sin(x-y), y=0..PI/2)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="sin(x) - cos(x)" style="vertical-align:-7px" width="76" height="21" src="section-15-2-iterated-integrals_images/math34.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, x=0..PI/2)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="0" style="vertical-align:-7px" width="16" height="20" src="section-15-2-iterated-integrals_images/math35.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int((x*y^2)/(x^2 + 1), y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(x*y^3)/(3*(x^2 + 1))" style="vertical-align:-17px" width="56" height="38" src="section-15-2-iterated-integrals_images/math36.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int((x*y^2)/(x^2 + 1), y=-3..3)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(18*x)/(x^2 + 1)" style="vertical-align:-17px" width="39" height="35" src="section-15-2-iterated-integrals_images/math37.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="9*ln(x^2 + 1)" style="vertical-align:-7px" width="63" height="23" src="section-15-2-iterated-integrals_images/math38.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">ln(1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="0" style="vertical-align:-7px" width="16" height="20" src="section-15-2-iterated-integrals_images/math39.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">ln(2)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="ln(2)" style="vertical-align:-7px" width="33" height="21" src="section-15-2-iterated-integrals_images/math40.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int((x*y^2)/(x^2 + 1), y=-3..3)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(18*x)/(x^2 + 1)" style="vertical-align:-17px" width="39" height="35" src="section-15-2-iterated-integrals_images/math41.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, x=0..1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="ln(512)" style="vertical-align:-7px" width="44" height="21" src="section-15-2-iterated-integrals_images/math42.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(9*ln(2))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="9*ln(2)" style="vertical-align:-7px" width="42" height="21" src="section-15-2-iterated-integrals_images/math43.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">2^9</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="512" style="vertical-align:-7px" width="27" height="20" src="section-15-2-iterated-integrals_images/math44.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int((1+x^2)/(1+y^2), y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="arctan(y)*(x^2 + 1)" style="vertical-align:-7px" width="88" height="23" src="section-15-2-iterated-integrals_images/math45.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">tan(1)^-1</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1/tan(1)" style="vertical-align:-15px" width="39" height="30" src="section-15-2-iterated-integrals_images/math46.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">arctan(1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="PI/4" style="vertical-align:-11px" width="18" height="24" src="section-15-2-iterated-integrals_images/math47.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">arctan(2)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="arctan(2)" style="vertical-align:-7px" width="51" height="21" src="section-15-2-iterated-integrals_images/math48.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int((1+x^2)/(1+y^2), y=0..1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(PI*(x^2 + 1))/4" style="vertical-align:-11px" width="56" height="32" src="section-15-2-iterated-integrals_images/math49.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(PI*x*(x^2 + 3))/12" style="vertical-align:-11px" width="64" height="32" src="section-15-2-iterated-integrals_images/math50.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int((1+x^2)/(1+y^2), y=0..1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(PI*(x^2 + 1))/4" style="vertical-align:-11px" width="56" height="32" src="section-15-2-iterated-integrals_images/math51.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, x=0..1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="PI/3" style="vertical-align:-12px" width="18" height="25" src="section-15-2-iterated-integrals_images/math52.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(x/(1 + x*y), y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="ln(x*y + 1)" style="vertical-align:-7px" width="58" height="21" src="section-15-2-iterated-integrals_images/math53.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(x/(1 + x*y), y=0..1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="piecewise([x &lt;= 0, int(x/(y*x + 1), y = 0..1)], [arg(x) &lt; PI and x &lt;&gt; 0, ln(x + 1)])" style="vertical-align:-20px" width="174" height="48" src="section-15-2-iterated-integrals_images/math54.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(ln(x+1), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(ln(x + 1) - 1)*(x + 1)" style="vertical-align:-7px" width="110" height="21" src="section-15-2-iterated-integrals_images/math55.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(ln(x+1), x=0..1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="ln(4) - 1" style="vertical-align:-7px" width="51" height="21" src="section-15-2-iterated-integrals_images/math56.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">ln(x+1) * ln(x+1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="ln(x + 1)^2" style="vertical-align:-7px" width="54" height="23" src="section-15-2-iterated-integrals_images/math57.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(x/(2*(1+x^4)), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="arctan(x^2)/4" style="vertical-align:-11px" width="56" height="32" src="section-15-2-iterated-integrals_images/math58.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">arctan(0)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="0" style="vertical-align:-7px" width="16" height="20" src="section-15-2-iterated-integrals_images/math59.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">arctan(1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="PI/4" style="vertical-align:-11px" width="18" height="24" src="section-15-2-iterated-integrals_images/math60.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">cos(PI)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-1" style="vertical-align:-7px" width="26" height="20" src="section-15-2-iterated-integrals_images/math61.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(1 + x^2 * sin(y) + y^2 * sin(x), y=-PI..PI)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="2*PI + (2*PI^3*sin(x))/3" style="vertical-align:-12px" width="87" height="33" src="section-15-2-iterated-integrals_images/math62.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, x=-PI..PI)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="4*PI^2" style="vertical-align:-7px" width="29" height="23" src="section-15-2-iterated-integrals_images/math63.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(PI + (2*x^3)/3 + (PI^3 * sin(x))/3, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="PI*x + x^4/6 - (PI^3*cos(x))/3" style="vertical-align:-12px" width="102" height="33" src="section-15-2-iterated-integrals_images/math64.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(PI + (2*x^2) + (PI^3 * sin(x))/3, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="PI*x + (2*x^3)/3 - (PI^3*cos(x))/3" style="vertical-align:-12px" width="111" height="33" src="section-15-2-iterated-integrals_images/math65.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">cos(0)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1" style="vertical-align:-7px" width="16" height="20" src="section-15-2-iterated-integrals_images/math66.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(1 + x^2 * sin(y) + y^2 * sin(x), y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="y - x^2*cos(y) + (y^3*sin(x))/3" style="vertical-align:-12px" width="119" height="33" src="section-15-2-iterated-integrals_images/math67.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(1 + x^2 * sin(y) + y^2 * sin(x), y=0..PI)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="PI + 2*x^2 + (PI^3*sin(x))/3" style="vertical-align:-12px" width="99" height="33" src="section-15-2-iterated-integrals_images/math68.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, x=0..PI)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(PI^2*(4*PI + 3))/3" style="vertical-align:-12px" width="66" height="33" src="section-15-2-iterated-integrals_images/math69.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1">&nbsp;</p>
+</div>
+<div class="Csep3end"></div>
+<p class="P4">&nbsp;</p>
+</body>
+</html>

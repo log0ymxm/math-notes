@@ -1,0 +1,383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>section-02-3-properties-of-determinants-cramers-rule</title>
+<style type="text/css">
+/* <![CDATA[ */
+span.S0, a.S0 { font-family:sans-serif; font-size:11pt; font-style:normal; font-weight:normal; color:#000000; }
+span.S1, a.S1 { font-family:monospace; font-size:11pt; font-style:normal; font-weight:normal; color:#ff0000; }
+span.S2, a.S2 { font-family:monospace; font-size:11pt; font-style:normal; font-weight:normal; color:#5500ff; }
+p.P0 { text-align:justify; margin-top:0pt; margin-left:0pt; margin-right:0pt; margin-bottom:0pt; text-indent:0pt; }
+p.P1 { text-align:left; white-space:pre; margin-top: 0; margin-left: 0; margin-right: 0; margin-bottom: 0; }
+div.C2 { padding-top:0pt; padding-bottom:0pt; padding-left:5.7pt; border-left-width:1pt; border-left-style: solid; border-color: #808080; border-right-width: 0; border-right-style: none; border-top-width: 0; border-top-style: none; border-bottom-width: 0; border-bottom-style: none; }
+div.Csep3in { padding: 0; height: 0; width: 5pt; border-bottom: 1px solid #808080; margin-top:2.85pt; margin-bottom: 0; }
+div.Csep3out { padding: 0; height: 0; width: 3pt; border-bottom: 1px solid #808080; margin-top: 0;  margin-bottom: 0; }
+div.Csep3end { padding: 0; height: 0; width: 5pt; border-bottom: 1px solid #808080; margin-bottom:2.85pt; margin-top: 0; }
+p.P4 { margin-top:0pt; margin-left:0pt; margin-right:0pt; margin-bottom:0pt; text-indent:0pt; }
+body { background-color:white; }
+@page { margin:56pt; size:612pt 792pt; background-color:white; }
+/* ]]> */
+</style>
+</head>
+<body>
+<p class="P0">&nbsp;</p>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">-224/16</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-14" style="vertical-align:-7px" width="31" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math0.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">6*32</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="192" style="vertical-align:-7px" width="27" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math1.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">-92-112-192</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-396" style="vertical-align:-7px" width="37" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math2.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%/3</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-132" style="vertical-align:-7px" width="37" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math3.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">396/8</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="99/2" style="vertical-align:-11px" width="23" height="27" src="section-02-3-properties-of-determinants-cramers-rule_images/math4.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">56*8</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="448" style="vertical-align:-7px" width="27" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math5.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">det(matrix([[-4,2,-6],[-6,-4,-2],[-2,-8,-10]]))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-448" style="vertical-align:-7px" width="37" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math6.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(-4*24)-(2*56)-(6*32)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-400" style="vertical-align:-7px" width="37" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math7.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">40-16</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="24" style="vertical-align:-7px" width="21" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math8.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">60-4</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="56" style="vertical-align:-7px" width="21" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math9.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">40-8</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="32" style="vertical-align:-7px" width="21" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math10.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">6*8</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="48" style="vertical-align:-7px" width="21" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math11.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">96+112+240</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="448" style="vertical-align:-7px" width="27" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math12.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%/8</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="56" style="vertical-align:-7px" width="21" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math13.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a:=matrix([[-1,8,2],[1,0,-1],[-2,2,2]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-1, 8, 2], [1, 0, -1], [-2, 2, 2]])" style="vertical-align:-21px" width="83" height="48" src="section-02-3-properties-of-determinants-cramers-rule_images/math14.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">b:=matrix([[2,-1,-4],[1,1,3],[0,3,-1]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[2, -1, -4], [1, 1, 3], [0, 3, -1]])" style="vertical-align:-19px" width="81" height="44" src="section-02-3-properties-of-determinants-cramers-rule_images/math15.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a*b</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[6, 15, 26], [2, -4, -3], [-2, 10, 12]])" style="vertical-align:-20px" width="91" height="44" src="section-02-3-properties-of-determinants-cramers-rule_images/math16.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">b*a</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[5, 8, -3], [-6, 14, 7], [5, -2, -5]])" style="vertical-align:-21px" width="93" height="48" src="section-02-3-properties-of-determinants-cramers-rule_images/math17.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(6*-18)-(15*18)+(26*12)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-66" style="vertical-align:-7px" width="31" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math18.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">det(a*b)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-66" style="vertical-align:-7px" width="31" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math19.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">14*5</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="70" style="vertical-align:-7px" width="21" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math20.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(5*-56)-(8*-5)-(3*-58)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-66" style="vertical-align:-7px" width="31" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math21.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">det(a+b)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-75" style="vertical-align:-7px" width="31" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math22.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">det(a)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="2" style="vertical-align:-7px" width="16" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math23.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">det(b)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-33" style="vertical-align:-7px" width="31" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math24.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">det(matrix([[1,3,1,1],[2,5,2,2],[1,3,8,9],[1,3,2,2]]))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1" style="vertical-align:-7px" width="16" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math25.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">adj(matrix([[1,3,1,1],[2,5,2,2],[1,3,8,9],[1,3,2,2]]))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="adj(matrix([[1, 3, 1, 1], [2, 5, 2, 2], [1, 3, 8, 9], [1, 3, 2, 2]]))" style="vertical-align:-24px" width="108" height="54" src="section-02-3-properties-of-determinants-cramers-rule_images/math26.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">linalg::adjoint(matrix([[1,3,1,1],[2,5,2,2],[1,3,8,9],[1,3,2,2]]))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-4, 3, 0, -1], [2, -1, 0, 0], [-7, 0, -1, 8], [6, 0, 1, -7]])" style="vertical-align:-27px" width="115" height="59" src="section-02-3-properties-of-determinants-cramers-rule_images/math27.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(cos(x)^2 - sin(x)^2)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="cos(2*x)" style="vertical-align:-7px" width="47" height="21" src="section-02-3-properties-of-determinants-cramers-rule_images/math28.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-1, 8, 2], [1, 0, -1], [-2, 2, 2]])" style="vertical-align:-21px" width="83" height="48" src="section-02-3-properties-of-determinants-cramers-rule_images/math29.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">transpose(a)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-1, 1, -2], [8, 0, 2], [2, -1, 2]])" style="vertical-align:-19px" width="91" height="44" src="section-02-3-properties-of-determinants-cramers-rule_images/math30.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">det(a)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="2" style="vertical-align:-7px" width="16" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math31.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">det(transpose(a))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="2" style="vertical-align:-7px" width="16" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math32.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">linalg::adjoint(a)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[2, -12, -8], [0, 2, 1], [2, -14, -8]])" style="vertical-align:-18px" width="86" height="43" src="section-02-3-properties-of-determinants-cramers-rule_images/math33.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">linalg::adjoint(transpose(a))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[2, 0, 2], [-12, 2, -14], [-8, 1, -8]])" style="vertical-align:-20px" width="91" height="43" src="section-02-3-properties-of-determinants-cramers-rule_images/math34.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a*transpose(a)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[69, -3, 22], [-3, 2, -4], [22, -4, 12]])" style="vertical-align:-21px" width="93" height="48" src="section-02-3-properties-of-determinants-cramers-rule_images/math35.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">transpose(a)*a</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[6, -12, -7], [-12, 68, 20], [-7, 20, 9]])" style="vertical-align:-21px" width="103" height="48" src="section-02-3-properties-of-determinants-cramers-rule_images/math36.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">det(a*transpose(a))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="4" style="vertical-align:-7px" width="16" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math37.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">det(transpose(a)*a)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="4" style="vertical-align:-7px" width="16" height="20" src="section-02-3-properties-of-determinants-cramers-rule_images/math38.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1">&nbsp;</p>
+</div>
+<div class="Csep3end"></div>
+<p class="P4">&nbsp;</p>
+</body>
+</html>

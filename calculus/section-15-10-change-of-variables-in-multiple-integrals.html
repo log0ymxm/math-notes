@@ -1,0 +1,612 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>section-15-10-change-of-variables-in-multiple-integrals</title>
+<style type="text/css">
+/* <![CDATA[ */
+span.S0, a.S0 { font-family:sans-serif; font-size:11pt; font-style:normal; font-weight:normal; color:#000000; }
+span.S1, a.S1 { font-family:monospace; font-size:11pt; font-style:normal; font-weight:normal; color:#ff0000; }
+span.S2, a.S2 { font-family:monospace; font-size:11pt; font-style:normal; font-weight:normal; color:#5500ff; }
+p.P0 { text-align:justify; margin-top:0pt; margin-left:0pt; margin-right:0pt; margin-bottom:0pt; text-indent:0pt; }
+p.P1 { text-align:left; white-space:pre; margin-top: 0; margin-left: 0; margin-right: 0; margin-bottom: 0; }
+div.C2 { padding-top:0pt; padding-bottom:0pt; padding-left:5.7pt; border-left-width:1pt; border-left-style: solid; border-color: #808080; border-right-width: 0; border-right-style: none; border-top-width: 0; border-top-style: none; border-bottom-width: 0; border-bottom-style: none; }
+div.Csep3in { padding: 0; height: 0; width: 5pt; border-bottom: 1px solid #808080; margin-top:2.85pt; margin-bottom: 0; }
+div.Csep3out { padding: 0; height: 0; width: 3pt; border-bottom: 1px solid #808080; margin-top: 0;  margin-bottom: 0; }
+div.Csep3end { padding: 0; height: 0; width: 5pt; border-bottom: 1px solid #808080; margin-bottom:2.85pt; margin-top: 0; }
+p.P4 { margin-top:0pt; margin-left:0pt; margin-right:0pt; margin-bottom:0pt; text-indent:0pt; }
+body { background-color:white; }
+@page { margin:56pt; size:612pt 792pt; background-color:white; }
+/* ]]> */
+</style>
+</head>
+<body>
+<p class="P0">&nbsp;</p>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">E^r * E^-r</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1" style="vertical-align:-7px" width="16" height="20" src="section-15-10-change-of-variables-in-multiple-integrals_images/math0.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(u/v, v)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-u/v^2" style="vertical-align:-15px" width="31" height="28" src="section-15-10-change-of-variables-in-multiple-integrals_images/math1.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(1/x, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-1/x^2" style="vertical-align:-15px" width="31" height="30" src="section-15-10-change-of-variables-in-multiple-integrals_images/math2.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(1/x, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="ln(x)" style="vertical-align:-7px" width="32" height="21" src="section-15-10-change-of-variables-in-multiple-integrals_images/math3.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(u*v*w) - (1/(u*v*w))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="u*v*w - 1/(u*v*w)" style="vertical-align:-14px" width="72" height="29" src="section-15-10-change-of-variables-in-multiple-integrals_images/math4.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(u*v)/8 + (u*v)/(2*w) + (u*w)/(2*v) + (u*v*w) - (1/(u*v*w)) + (w*v)/(2*u)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(u*v)/8 + (u*v)/(2*w) + (u*w)/(2*v) + (v*w)/(2*u) + u*v*w - 1/(u*v*w)" style="vertical-align:-14px" width="189" height="32" src="section-15-10-change-of-variables-in-multiple-integrals_images/math5.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(8*u^2*v^2*w^2 + u^2*v^2*w + 4*u^2*v^2 + 4*u^2*w^2 + 4*v^2*w^2 - 8)/(8*u*v*w)" style="vertical-align:-14px" width="251" height="35" src="section-15-10-change-of-variables-in-multiple-integrals_images/math6.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(u/v, u)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1/v" style="vertical-align:-11px" width="18" height="26" src="section-15-10-change-of-variables-in-multiple-integrals_images/math7.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(u/v, v)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-u/v^2" style="vertical-align:-15px" width="31" height="28" src="section-15-10-change-of-variables-in-multiple-integrals_images/math8.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(u/v, w)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="0" style="vertical-align:-7px" width="16" height="20" src="section-15-10-change-of-variables-in-multiple-integrals_images/math9.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">E^1</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="exp(1)" style="vertical-align:-7px" width="15" height="20" src="section-15-10-change-of-variables-in-multiple-integrals_images/math10.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(sin(p)^2, p)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="2*cos(p)*sin(p)" style="vertical-align:-7px" width="80" height="21" src="section-15-10-change-of-variables-in-multiple-integrals_images/math11.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(sin(p)^2, p)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="p/2 - sin(2*p)/4" style="vertical-align:-11px" width="70" height="30" src="section-15-10-change-of-variables-in-multiple-integrals_images/math12.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(PI/2)/2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="PI/4" style="vertical-align:-11px" width="18" height="24" src="section-15-10-change-of-variables-in-multiple-integrals_images/math13.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(cos(t)^2, t)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="t/2 + sin(2*t)/4" style="vertical-align:-11px" width="65" height="30" src="section-15-10-change-of-variables-in-multiple-integrals_images/math14.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">sin(4*PI)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="0" style="vertical-align:-7px" width="16" height="20" src="section-15-10-change-of-variables-in-multiple-integrals_images/math15.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">u / (v/u)^-0.4</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="u*(v/u)^0.4" style="vertical-align:-11px" width="47" height="27" src="section-15-10-change-of-variables-in-multiple-integrals_images/math16.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="u*(v/u)^0.4" style="vertical-align:-11px" width="47" height="27" src="section-15-10-change-of-variables-in-multiple-integrals_images/math17.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(u/y) * y^1.4</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="u*y^0.4" style="vertical-align:-7px" width="34" height="23" src="section-15-10-change-of-variables-in-multiple-integrals_images/math18.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(y^0.4)^-0.4</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1/y^0.16" style="vertical-align:-7px" width="35" height="24" src="section-15-10-change-of-variables-in-multiple-integrals_images/math19.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">solve(v = u * (y^0.4), y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="piecewise([u = 0 and v = 0, C_], [u = 0 and v &lt;&gt; 0, {}], [u &lt;&gt; 0 and v = 0, {0.0}], [u &lt;&gt; 0 and v &lt;&gt; 0, Dom::ImageSet(exp(-15.70796327*k*I)*(v/u)^(5/2), k, Z_ intersect Dom::Interval([0.1591549431*arg(v/u) - 0.2], 0.1591549431*arg(v/u) + 0.2))])" style="vertical-align:-44px" width="517" height="84" src="section-15-10-change-of-variables-in-multiple-integrals_images/math20.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(0.4)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="0.4" style="vertical-align:-7px" width="24" height="20" src="section-15-10-change-of-variables-in-multiple-integrals_images/math21.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">expand(0.4)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="0.4" style="vertical-align:-7px" width="24" height="20" src="section-15-10-change-of-variables-in-multiple-integrals_images/math22.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">5/2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="5/2" style="vertical-align:-11px" width="18" height="27" src="section-15-10-change-of-variables-in-multiple-integrals_images/math23.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">float(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="2.5" style="vertical-align:-7px" width="24" height="20" src="section-15-10-change-of-variables-in-multiple-integrals_images/math24.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">float(2/5)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="0.4" style="vertical-align:-7px" width="24" height="20" src="section-15-10-change-of-variables-in-multiple-integrals_images/math25.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(y^(2/5))^(5/2)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="y" style="vertical-align:-7px" width="15" height="20" src="section-15-10-change-of-variables-in-multiple-integrals_images/math26.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">u / (v/u)^(5/2)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="u/(v/u)^(5/2)" style="vertical-align:-20px" width="38" height="33" src="section-15-10-change-of-variables-in-multiple-integrals_images/math27.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="u/(v/u)^(5/2)" style="vertical-align:-20px" width="38" height="33" src="section-15-10-change-of-variables-in-multiple-integrals_images/math28.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(%, u)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1/(v/u)^(5/2) + (5*v)/(2*u*(v/u)^(7/2))" style="vertical-align:-20px" width="96" height="38" src="section-15-10-change-of-variables-in-multiple-integrals_images/math29.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">u / (v/u)^(5/2)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="u/(v/u)^(5/2)" style="vertical-align:-20px" width="38" height="33" src="section-15-10-change-of-variables-in-multiple-integrals_images/math30.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(%, v)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-5/(2*(v/u)^(7/2))" style="vertical-align:-20px" width="57" height="36" src="section-15-10-change-of-variables-in-multiple-integrals_images/math31.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff((v/u)^(5/2), v)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(5*(v/u)^(3/2))/(2*u)" style="vertical-align:-14px" width="47" height="38" src="section-15-10-change-of-variables-in-multiple-integrals_images/math32.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff((v/u)^(5/2), u)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-(5*v*(v/u)^(3/2))/(2*u^2)" style="vertical-align:-17px" width="65" height="41" src="section-15-10-change-of-variables-in-multiple-integrals_images/math33.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">linalg::jacobian([u / (v/u)^(5/2), (v/u)^(5/2)], [u, v])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1/(v/u)^(5/2) + (5*v)/(2*u*(v/u)^(7/2)), -5/(2*(v/u)^(7/2))], [-(5*v*(v/u)^(3/2))/(2*u^2), (5*(v/u)^(3/2))/(2*u)]])" style="vertical-align:-36px" width="163" height="72" src="section-15-10-change-of-variables-in-multiple-integrals_images/math34.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">linalg::scalarProduct(linalg::col(%,1), linalg::col(%,2))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-(5*v*(7*u^6*conjugate(u) + 5*v^5*conjugate((v/u)^(3/2))*conjugate((v/u)^(7/2))))/(4*u^7*conjugate((v/u)^(7/2))*conjugate(u)*(v/u)^(7/2))" style="vertical-align:-21px" width="169" height="48" src="section-15-10-change-of-variables-in-multiple-integrals_images/math35.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-(5*v*(7*u^5*abs(u)^2 + 5*v^5*conjugate((v/u)^(3/2))*conjugate((v/u)^(7/2))))/(4*u^7*conjugate((v/u)^(7/2))*conjugate(u)*(v/u)^(7/2))" style="vertical-align:-21px" width="181" height="48" src="section-15-10-change-of-variables-in-multiple-integrals_images/math36.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, v=c..d)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="int(-(5*v*(7*u^5*abs(u)^2 + 5*v^5*conjugate((v/u)^(3/2))*conjugate((v/u)^(7/2))))/(4*u^7*conjugate((v/u)^(7/2))*conjugate(u)*(v/u)^(7/2)), v = c..d)" style="vertical-align:-24px" width="228" height="54" src="section-15-10-change-of-variables-in-multiple-integrals_images/math37.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, u=a..b)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="int(int(-(5*v*(7*u^5*abs(u)^2 + 5*v^5*conjugate((v/u)^(3/2))*conjugate((v/u)^(7/2))))/(4*u^7*conjugate((v/u)^(7/2))*conjugate(u)*(v/u)^(7/2)), v = c..d), u = a..b)" style="vertical-align:-24px" width="256" height="54" src="section-15-10-change-of-variables-in-multiple-integrals_images/math38.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">u - (-2 * v + 6*u)/5</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(2*v)/5 - u/5" style="vertical-align:-12px" width="46" height="30" src="section-15-10-change-of-variables-in-multiple-integrals_images/math39.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">linalg::jacobian([%, (v- 3*u)/5],[u,v])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-1/5, 2/5], [-3/5, 1/5]])" style="vertical-align:-21px" width="59" height="44" src="section-15-10-change-of-variables-in-multiple-integrals_images/math40.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">linalg::scalarProduct(linalg::col(%,1), linalg::col(%,2))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-1/5" style="vertical-align:-12px" width="28" height="27" src="section-15-10-change-of-variables-in-multiple-integrals_images/math41.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(u/v, v)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="u*ln(v)" style="vertical-align:-7px" width="41" height="21" src="section-15-10-change-of-variables-in-multiple-integrals_images/math42.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(u/v, v=1..8)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="3*u*ln(2)" style="vertical-align:-7px" width="51" height="21" src="section-15-10-change-of-variables-in-multiple-integrals_images/math43.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">ln(8) - ln(1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="ln(8)" style="vertical-align:-7px" width="33" height="21" src="section-15-10-change-of-variables-in-multiple-integrals_images/math44.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(ln(8))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="ln(8)" style="vertical-align:-7px" width="33" height="21" src="section-15-10-change-of-variables-in-multiple-integrals_images/math45.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(u * ln(8), u)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(3*u^2*ln(2))/2" style="vertical-align:-11px" width="57" height="32" src="section-15-10-change-of-variables-in-multiple-integrals_images/math46.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(u * ln(8), u=0..4)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="24*ln(2)" style="vertical-align:-7px" width="47" height="21" src="section-15-10-change-of-variables-in-multiple-integrals_images/math47.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">8*3</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="24" style="vertical-align:-7px" width="21" height="20" src="section-15-10-change-of-variables-in-multiple-integrals_images/math48.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">3 * int(2*u + v - 3*(u + 2*v), v=0..(1-u))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-(3*(3*u - 5)*(u - 1))/2" style="vertical-align:-11px" width="107" height="30" src="section-15-10-change-of-variables-in-multiple-integrals_images/math49.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, u=0..1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-3" style="vertical-align:-7px" width="26" height="20" src="section-15-10-change-of-variables-in-multiple-integrals_images/math50.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(2*u + v - 3*(u + 2*v), v)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-(v*(2*u + 5*v))/2" style="vertical-align:-11px" width="79" height="30" src="section-15-10-change-of-variables-in-multiple-integrals_images/math51.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-(v*(2*u + 5*v))/2" style="vertical-align:-11px" width="79" height="30" src="section-15-10-change-of-variables-in-multiple-integrals_images/math52.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(2*u + v - 3*(u + 2*v))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="- u - 5*v" style="vertical-align:-7px" width="52" height="20" src="section-15-10-change-of-variables-in-multiple-integrals_images/math53.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(u +5*v, v)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(v*(2*u + 5*v))/2" style="vertical-align:-11px" width="69" height="30" src="section-15-10-change-of-variables-in-multiple-integrals_images/math54.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, u)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(v*(2*u + 5*v)^2)/8" style="vertical-align:-12px" width="73" height="33" src="section-15-10-change-of-variables-in-multiple-integrals_images/math55.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(cos(v/u), v)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="u*sin(v/u)" style="vertical-align:-11px" width="50" height="24" src="section-15-10-change-of-variables-in-multiple-integrals_images/math56.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">sin(-1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-sin(1)" style="vertical-align:-7px" width="47" height="21" src="section-15-10-change-of-variables-in-multiple-integrals_images/math57.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(1/(1-x*y), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-ln(x*y - 1)/y" style="vertical-align:-13px" width="70" height="32" src="section-15-10-change-of-variables-in-multiple-integrals_images/math58.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(1/(1-x*y), x=0..1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="int(-1/(x*y - 1), x = 0..1)" style="vertical-align:-19px" width="94" height="45" src="section-15-10-change-of-variables-in-multiple-integrals_images/math59.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-int(1/(x*y - 1), x = 0..1)" style="vertical-align:-19px" width="80" height="45" src="section-15-10-change-of-variables-in-multiple-integrals_images/math60.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(-ln(y-1) + ln(-1))/y</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(- ln(y - 1) + PI*I)/y" style="vertical-align:-13px" width="86" height="32" src="section-15-10-change-of-variables-in-multiple-integrals_images/math61.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="- dilog(y) - ln(y - 1)*ln(y) + PI*ln(y)*I" style="vertical-align:-7px" width="173" height="21" src="section-15-10-change-of-variables-in-multiple-integrals_images/math62.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int((-ln(y-1) + ln(-1))/y, y=0..1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="PI^2/6" style="vertical-align:-12px" width="22" height="31" src="section-15-10-change-of-variables-in-multiple-integrals_images/math63.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1">&nbsp;</p>
+</div>
+<div class="Csep3end"></div>
+<p class="P4">&nbsp;</p>
+<p class="P4">&nbsp;</p>
+<p class="P4">&nbsp;</p>
+<p class="P4">&nbsp;</p>
+<p class="P4">&nbsp;</p>
+</body>
+</html>

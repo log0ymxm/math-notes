@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>section-05-1-eigenvalues-and-eigenvectors</title>
+<style type="text/css">
+/* <![CDATA[ */
+span.S0, a.S0 { font-family:sans-serif; font-size:11pt; font-style:normal; font-weight:normal; color:#000000; }
+span.S1, a.S1 { font-family:monospace; font-size:11pt; font-style:normal; font-weight:normal; color:#ff0000; }
+span.S2, a.S2 { font-family:monospace; font-size:11pt; font-style:normal; font-weight:normal; color:#5500ff; }
+p.P0 { text-align:justify; margin-top:0pt; margin-left:0pt; margin-right:0pt; margin-bottom:0pt; text-indent:0pt; }
+p.P1 { text-align:left; white-space:pre; margin-top: 0; margin-left: 0; margin-right: 0; margin-bottom: 0; }
+div.C2 { padding-top:0pt; padding-bottom:0pt; padding-left:5.7pt; border-left-width:1pt; border-left-style: solid; border-color: #808080; border-right-width: 0; border-right-style: none; border-top-width: 0; border-top-style: none; border-bottom-width: 0; border-bottom-style: none; }
+div.Csep3in { padding: 0; height: 0; width: 5pt; border-bottom: 1px solid #808080; margin-top:2.85pt; margin-bottom: 0; }
+div.Csep3out { padding: 0; height: 0; width: 3pt; border-bottom: 1px solid #808080; margin-top: 0;  margin-bottom: 0; }
+div.Csep3end { padding: 0; height: 0; width: 5pt; border-bottom: 1px solid #808080; margin-bottom:2.85pt; margin-top: 0; }
+p.P4 { margin-top:0pt; margin-left:0pt; margin-right:0pt; margin-bottom:0pt; text-indent:0pt; }
+body { background-color:white; }
+@page { margin:56pt; size:612pt 792pt; background-color:white; }
+/* ]]> */
+</style>
+</head>
+<body>
+<p class="P0">&nbsp;</p>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">linalg::eigenvalues(matrix([[4,0,1],[-2,1,0],[-2,0,1]]))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="{1, 2, 3}" style="vertical-align:-7px" width="54" height="21" src="section-05-1-eigenvalues-and-eigenvectors_images/math0.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">linalg::eigenvectors(matrix([[4,0,1],[-2,1,0],[-2,0,1]]))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="[[3, 1, [matrix([[-1], [1], [1]])]], [1, 1, [matrix([[0], [1], [0]])]], [2, 1, [matrix([[-1/2], [1], [1]])]]]" style="vertical-align:-21px" width="293" height="54" src="section-05-1-eigenvalues-and-eigenvectors_images/math1.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">S := matrix([[a,b,c],[d,e,f],[g,h,i]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[a, b, c], [d, e, f], [g, h, i]])" style="vertical-align:-20px" width="62" height="43" src="section-05-1-eigenvalues-and-eigenvectors_images/math2.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">S^2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[a^2 + b*d + c*g, a*b + b*e + c*h, a*c + b*f + c*i], [a*d + d*e + f*g, e^2 + b*d + f*h, c*d + e*f + f*i], [a*g + d*h + g*i, b*g + e*h + h*i, i^2 + c*g + f*h]])" style="vertical-align:-30px" width="247" height="68" src="section-05-1-eigenvalues-and-eigenvectors_images/math3.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">R := matrix([[a,b,c],[b,e,f],[c,f,i]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[a, b, c], [b, e, f], [c, f, i]])" style="vertical-align:-26px" width="65" height="55" src="section-05-1-eigenvalues-and-eigenvectors_images/math4.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">R^2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[a^2 + b^2 + c^2, a*b + b*e + c*f, a*c + b*f + c*i], [a*b + b*e + c*f, b^2 + e^2 + f^2, b*c + e*f + f*i], [a*c + b*f + c*i, b*c + e*f + f*i, c^2 + f^2 + i^2]])" style="vertical-align:-62px" width="206" height="171" src="section-05-1-eigenvalues-and-eigenvectors_images/math5.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">linalg::eigenvalues(R)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="{a/3 + e/3 + i/3 + (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3) + ((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3), a/3 + e/3 + i/3 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/(2*((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)) - ((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)/2 - (3^(1/2)*((b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3) - ((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3))*I)/2, a/3 + e/3 + i/3 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/(2*((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)) - ((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)/2 + (3^(1/2)*((b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3) - ((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3))*I)/2}" style="vertical-align:-171px" width="465" height="338" src="section-05-1-eigenvalues-and-eigenvectors_images/math6.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">linalg::eigenvectors(R)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="[[a/3 + e/3 + i/3 + (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3) + ((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3), 1, [matrix([[(c^2*f - b*i*c + f^3 - e*i*f)/(b*c^2 - b*f^2 - a*c*f + c*e*f) - (f*(a/3 + e/3 + i/3 + (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3) + (- ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 + (a + e + i)^3/27 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3))^2)/(b*c^2 - b*f^2 - a*c*f + c*e*f) + ((b*c + e*f + f*i)*(a/3 + e/3 + i/3 + (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3) + (- ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 + (a + e + i)^3/27 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)))/(b*c^2 - b*f^2 - a*c*f + c*e*f)], [- (c^3 + c*f^2 - a*i*c - b*i*f)/(b*c^2 - b*f^2 - a*c*f + c*e*f) + (c*(a/3 + e/3 + i/3 + (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3) + (- ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 + (a + e + i)^3/27 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3))^2)/(b*c^2 - b*f^2 - a*c*f + c*e*f) - ((a*c + b*f + c*i)*(a/3 + e/3 + i/3 + (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3) + (- ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 + (a + e + i)^3/27 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)))/(b*c^2 - b*f^2 - a*c*f + c*e*f)], [1]])]], [a/3 + e/3 + i/3 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/(2*((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)) - ((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)/2 - (3^(1/2)*((b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3) - ((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3))*I)/2, 1, [matrix([[(c^2*f - b*i*c + f^3 - e*i*f)/(b*c^2 - b*f^2 - a*c*f + c*e*f) - (f*(a/3 + e/3 + i/3 - (3^(1/2)*((b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3) - (- ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 + (a + e + i)^3/27 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3))*I)/2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/(2*((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)) - (- ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 + (a + e + i)^3/27 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)/2)^2)/(b*c^2 - b*f^2 - a*c*f + c*e*f) + ((b*c + e*f + f*i)*(a/3 + e/3 + i/3 - (3^(1/2)*((b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3) - (- ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 + (a + e + i)^3/27 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3))*I)/2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/(2*((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)) - (- ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 + (a + e + i)^3/27 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)/2))/(b*c^2 - b*f^2 - a*c*f + c*e*f)], [- (c^3 + c*f^2 - a*i*c - b*i*f)/(b*c^2 - b*f^2 - a*c*f + c*e*f) + (c*(a/3 + e/3 + i/3 - (3^(1/2)*((b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3) - (- ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 + (a + e + i)^3/27 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3))*I)/2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/(2*((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)) - (- ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 + (a + e + i)^3/27 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)/2)^2)/(b*c^2 - b*f^2 - a*c*f + c*e*f) - ((a*c + b*f + c*i)*(a/3 + e/3 + i/3 - (3^(1/2)*((b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3) - (- ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 + (a + e + i)^3/27 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3))*I)/2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/(2*((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)) - (- ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 + (a + e + i)^3/27 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)/2))/(b*c^2 - b*f^2 - a*c*f + c*e*f)], [1]])]], [a/3 + e/3 + i/3 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/(2*((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)) - ((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)/2 + (3^(1/2)*((b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3) - ((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3))*I)/2, 1, [matrix([[(c^2*f - b*i*c + f^3 - e*i*f)/(b*c^2 - b*f^2 - a*c*f + c*e*f) - (f*(a/3 + e/3 + i/3 + (3^(1/2)*((b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3) - (- ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 + (a + e + i)^3/27 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3))*I)/2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/(2*((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)) - (- ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 + (a + e + i)^3/27 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)/2)^2)/(b*c^2 - b*f^2 - a*c*f + c*e*f) + ((b*c + e*f + f*i)*(a/3 + e/3 + i/3 + (3^(1/2)*((b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3) - (- ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 + (a + e + i)^3/27 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3))*I)/2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/(2*((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)) - (- ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 + (a + e + i)^3/27 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)/2))/(b*c^2 - b*f^2 - a*c*f + c*e*f)], [- (c^3 + c*f^2 - a*i*c - b*i*f)/(b*c^2 - b*f^2 - a*c*f + c*e*f) + (c*(a/3 + e/3 + i/3 + (3^(1/2)*((b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3) - (- ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 + (a + e + i)^3/27 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3))*I)/2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/(2*((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)) - (- ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 + (a + e + i)^3/27 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)/2)^2)/(b*c^2 - b*f^2 - a*c*f + c*e*f) - ((a*c + b*f + c*i)*(a/3 + e/3 + i/3 + (3^(1/2)*((b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3) - (- ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 + (a + e + i)^3/27 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3))*I)/2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)/(2*((a + e + i)^3/27 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 - ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)) - (- ((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 - (a*f^2)/2 - (c^2*e)/2 - (b^2*i)/2 + (a + e + i)^3/27 + ((((a + e + i)*(- b^2 - c^2 - f^2 + a*e + a*i + e*i))/6 + (a*f^2)/2 + (c^2*e)/2 + (b^2*i)/2 - (a + e + i)^3/27 - b*c*f - (a*e*i)/2)^2 - (b^2/3 - (a*i)/3 - (e*i)/3 - (a*e)/3 + c^2/3 + f^2/3 + (a + e + i)^2/9)^3)^(1/2) + b*c*f + (a*e*i)/2)^(1/3)/2))/(b*c^2 - b*f^2 - a*c*f + c*e*f)], [1]])]]]" style="vertical-align:-364px" width="452" height="865" src="section-05-1-eigenvalues-and-eigenvectors_images/math7.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">A:= matrix([[3,6],[1,2]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[3, 6], [1, 2]])" style="vertical-align:-11px" width="48" height="29" src="section-05-1-eigenvalues-and-eigenvectors_images/math8.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">A^2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[15, 30], [5, 10]])" style="vertical-align:-11px" width="58" height="30" src="section-05-1-eigenvalues-and-eigenvectors_images/math9.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">A:= matrix([[0,1,0],[0,0,1],[1,-3,3]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[0, 1, 0], [0, 0, 1], [1, -3, 3]])" style="vertical-align:-19px" width="71" height="42" src="section-05-1-eigenvalues-and-eigenvectors_images/math10.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">A^2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[0, 0, 1], [1, -3, 3], [3, -8, 6]])" style="vertical-align:-20px" width="71" height="43" src="section-05-1-eigenvalues-and-eigenvectors_images/math11.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">A^3</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1, -3, 3], [3, -8, 6], [6, -15, 10]])" style="vertical-align:-21px" width="83" height="48" src="section-05-1-eigenvalues-and-eigenvectors_images/math12.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">A:=matrix([[3,6],[1,2]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[3, 6], [1, 2]])" style="vertical-align:-11px" width="48" height="29" src="section-05-1-eigenvalues-and-eigenvectors_images/math13.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">A^2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[15, 30], [5, 10]])" style="vertical-align:-11px" width="58" height="30" src="section-05-1-eigenvalues-and-eigenvectors_images/math14.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">linalg::gaussJordan(matrix([[-3,-1,15],[-6,0,30],[-1,0,5],[-2,-1,10]])) </span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1, 0, -5], [0, 1, 0], [0, 0, 0], [0, 0, 0]])" style="vertical-align:-22px" width="73" height="54" src="section-05-1-eigenvalues-and-eigenvectors_images/math15.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">A^3</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[75, 150], [25, 50]])" style="vertical-align:-11px" width="64" height="29" src="section-05-1-eigenvalues-and-eigenvectors_images/math16.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">A^4</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[375, 750], [125, 250]])" style="vertical-align:-11px" width="70" height="30" src="section-05-1-eigenvalues-and-eigenvectors_images/math17.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">A^5</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1875, 3750], [625, 1250]])" style="vertical-align:-11px" width="80" height="30" src="section-05-1-eigenvalues-and-eigenvectors_images/math18.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1">&nbsp;</p>
+</div>
+<div class="Csep3end"></div>
+<p class="P4">&nbsp;</p>
+</body>
+</html>

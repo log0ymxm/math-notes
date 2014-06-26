@@ -1,0 +1,547 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>section-01-4-inverses-algebraic-properties-of-matrices</title>
+<style type="text/css">
+/* <![CDATA[ */
+span.S0, a.S0 { font-family:sans-serif; font-size:11pt; font-style:normal; font-weight:normal; color:#000000; }
+span.S1, a.S1 { font-family:monospace; font-size:11pt; font-style:normal; font-weight:normal; color:#ff0000; }
+span.S2, a.S2 { font-family:monospace; font-size:11pt; font-style:normal; font-weight:normal; color:#5500ff; }
+p.P0 { text-align:justify; margin-top:0pt; margin-left:0pt; margin-right:0pt; margin-bottom:0pt; text-indent:0pt; }
+p.P1 { text-align:left; white-space:pre; margin-top: 0; margin-left: 0; margin-right: 0; margin-bottom: 0; }
+div.C2 { padding-top:0pt; padding-bottom:0pt; padding-left:5.7pt; border-left-width:1pt; border-left-style: solid; border-color: #808080; border-right-width: 0; border-right-style: none; border-top-width: 0; border-top-style: none; border-bottom-width: 0; border-bottom-style: none; }
+div.Csep3in { padding: 0; height: 0; width: 5pt; border-bottom: 1px solid #808080; margin-top:2.85pt; margin-bottom: 0; }
+div.Csep3out { padding: 0; height: 0; width: 3pt; border-bottom: 1px solid #808080; margin-top: 0;  margin-bottom: 0; }
+div.Csep3end { padding: 0; height: 0; width: 5pt; border-bottom: 1px solid #808080; margin-bottom:2.85pt; margin-top: 0; }
+p.P4 { margin-top:0pt; margin-left:0pt; margin-right:0pt; margin-bottom:0pt; text-indent:0pt; }
+body { background-color:white; }
+@page { margin:56pt; size:595.3pt 841.9pt; background-color:white; }
+/* ]]> */
+</style>
+</head>
+<body>
+<p class="P0">&nbsp;</p>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a := matrix([[2,-1,3],[0,4,5],[-2,1,4]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[2, -1, 3], [0, 4, 5], [-2, 1, 4]])" style="vertical-align:-18px" width="81" height="44" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math0.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">b := matrix([[8,-3,-5],[0,1,2],[4,-7,6]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[8, -3, -5], [0, 1, 2], [4, -7, 6]])" style="vertical-align:-18px" width="81" height="43" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math1.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">c := matrix([[0,-2,3],[1,7,4],[3,5,9]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[0, -2, 3], [1, 7, 4], [3, 5, 9]])" style="vertical-align:-17px" width="71" height="42" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math2.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a*b</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[28, -28, 6], [20, -31, 38], [0, -21, 36]])" style="vertical-align:-21px" width="88" height="48" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math3.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">transpose(a)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[2, 0, -2], [-1, 4, 1], [3, 5, 4]])" style="vertical-align:-21px" width="83" height="48" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math4.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">transpose(a)*transpose(b)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[26, -4, -4], [-25, 6, -26], [-11, 13, 1]])" style="vertical-align:-21px" width="103" height="48" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math5.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">transpose(b)*transpose(a)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[28, 20, 0], [-28, -31, -21], [6, 38, 36]])" style="vertical-align:-19px" width="106" height="43" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math6.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">numeric::inverse(matrix([[3,1],[5,2]]))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[2.0, -1.0], [-5.0, 3.0]])" style="vertical-align:-15px" width="83" height="35" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math7.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">numeric::inverse(matrix([[2,0],[0,3]]))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[0.5, 0], [0, 0.3333333333]])" style="vertical-align:-11px" width="113" height="29" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math8.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">2^-2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1/4" style="vertical-align:-11px" width="18" height="26" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math9.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(E^x+E^-x)^2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(exp(-x) + exp(x))^2" style="vertical-align:-7px" width="60" height="24" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math10.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(exp(-x) + exp(x))^2" style="vertical-align:-7px" width="60" height="24" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math11.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%-(E^x-E^-x)^2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(exp(-x) + exp(x))^2 - (exp(-x) - exp(x))^2" style="vertical-align:-7px" width="122" height="24" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math12.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="simplify" style="vertical-align:-7px" width="47" height="20" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math13.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(E^x+E^-x)^2-(E^x-E^-x)^2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(exp(-x) + exp(x))^2 - (exp(-x) - exp(x))^2" style="vertical-align:-7px" width="122" height="24" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math14.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="4" style="vertical-align:-7px" width="16" height="20" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math15.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(E^-x)*(E^x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1" style="vertical-align:-7px" width="16" height="20" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math16.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">((1/4)*(E^x+E^-x)^2)-((1/4)*(E^x-E^-x)^2)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(exp(-x) + exp(x))^2/4 - (exp(-x) - exp(x))^2/4" style="vertical-align:-11px" width="126" height="33" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math17.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1" style="vertical-align:-7px" width="16" height="20" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math18.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a:= matrix([[-3, 7],[1, -2]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-3, 7], [1, -2]])" style="vertical-align:-15px" width="67" height="35" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math19.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">inverse(a)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[2, 7], [1, 3]])" style="vertical-align:-12px" width="48" height="29" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math20.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">inverse(a)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[2, 7], [1, 3]])" style="vertical-align:-12px" width="48" height="29" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math21.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">inverse(inverse(a))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-3, 7], [1, -2]])" style="vertical-align:-15px" width="67" height="35" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math22.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a:=matrix([[3,0,-1],[0,-2,0],[5,0,2]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[3, 0, -1], [0, -2, 0], [5, 0, 2]])" style="vertical-align:-18px" width="81" height="44" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math23.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a * a</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[4, 0, -5], [0, 4, 0], [25, 0, -1]])" style="vertical-align:-18px" width="76" height="43" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math24.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%*a</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-13, 0, -14], [0, -8, 0], [70, 0, -27]])" style="vertical-align:-21px" width="103" height="48" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math25.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a*3</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[9, 0, -3], [0, -6, 0], [15, 0, 6]])" style="vertical-align:-18px" width="86" height="44" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math26.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a * a * a</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-13, 0, -14], [0, -8, 0], [70, 0, -27]])" style="vertical-align:-21px" width="103" height="48" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math27.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a^2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[4, 0, -5], [0, 4, 0], [25, 0, -1]])" style="vertical-align:-18px" width="76" height="43" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math28.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a * a</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[4, 0, -5], [0, 4, 0], [25, 0, -1]])" style="vertical-align:-18px" width="76" height="43" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math29.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(a*a)*a</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-13, 0, -14], [0, -8, 0], [70, 0, -27]])" style="vertical-align:-21px" width="103" height="48" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math30.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(a^2)*a</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-13, 0, -14], [0, -8, 0], [70, 0, -27]])" style="vertical-align:-21px" width="103" height="48" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math31.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a^3</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-13, 0, -14], [0, -8, 0], [70, 0, -27]])" style="vertical-align:-21px" width="103" height="48" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math32.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(a^3)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-13, 0, -14], [0, -8, 0], [70, 0, -27]])" style="vertical-align:-21px" width="103" height="48" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math33.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%^-1</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-27/1331, 0, 14/1331], [0, -1/8, 0], [-70/1331, 0, -13/1331]])" style="vertical-align:-29px" width="117" height="62" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math34.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">inverse(a^3)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-27/1331, 0, 14/1331], [0, -1/8, 0], [-70/1331, 0, -13/1331]])" style="vertical-align:-29px" width="117" height="62" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math35.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">70/13</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="70/13" style="vertical-align:-12px" width="23" height="27" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math36.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">-14*(70/13)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-980/13" style="vertical-align:-12px" width="39" height="28" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math37.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">-27+%</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-1331/13" style="vertical-align:-12px" width="44" height="28" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math38.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(70/13)*(-13/1331)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-70/1331" style="vertical-align:-12px" width="44" height="27" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math39.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[3, 0, -1], [0, -2, 0], [5, 0, 2]])" style="vertical-align:-18px" width="81" height="44" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math40.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a^3</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-13, 0, -14], [0, -8, 0], [70, 0, -27]])" style="vertical-align:-21px" width="103" height="48" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math41.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%-(2*a)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-19, 0, -12], [0, -4, 0], [60, 0, -31]])" style="vertical-align:-21px" width="103" height="48" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math42.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a:=matrix([[2,0],[4,1]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[2, 0], [4, 1]])" style="vertical-align:-11px" width="48" height="29" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math43.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a^2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[4, 0], [12, 1]])" style="vertical-align:-11px" width="53" height="29" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math44.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">matrix([[5,0],[4,4]])*matrix([[-1,0],[4,-2]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-5, 0], [12, -8]])" style="vertical-align:-15px" width="67" height="35" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math45.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a:=matrix([[a,b],[c,d]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[matrix([[2, 0], [4, 1]]), matrix([[8, -3, -5], [0, 1, 2], [4, -7, 6]])], [matrix([[0, -2, 3], [1, 7, 4], [3, 5, 9]]), d]])" style="vertical-align:-38px" width="171" height="83" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math46.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">reset</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="reset" style="vertical-align:-7px" width="31" height="20" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math47.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">reset()</span></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">A:=matrix([[a,b],[c,d]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[a, b], [c, d]])" style="vertical-align:-11px" width="48" height="29" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math48.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">A^2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[a^2 + b*c, a*b + b*d], [a*c + c*d, d^2 + b*c]])" style="vertical-align:-18px" width="119" height="44" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math49.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(a+d)*A</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[a*(a + d), b*(a + d)], [c*(a + d), d*(a + d)]])" style="vertical-align:-18px" width="119" height="42" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math50.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(A^2)-((a+d)*A)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[b*c + a^2 - a*(a + d), a*b + b*d - b*(a + d)], [a*c + c*d - c*(a + d), b*c + d^2 - d*(a + d)]])" style="vertical-align:-18px" width="224" height="44" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math51.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[b*c - a*d, 0], [0, b*c - a*d]])" style="vertical-align:-15px" width="117" height="35" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math52.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">matrix([[1,1,1],[1,0,0],[0,1,1]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1, 1, 1], [1, 0, 0], [0, 1, 1]])" style="vertical-align:-15px" width="59" height="37" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math53.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">inverse(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="FAIL" style="vertical-align:-7px" width="34" height="20" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math54.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">inverse(matrix([[0,1],[0,2]]))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="FAIL" style="vertical-align:-7px" width="34" height="20" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math55.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">inverse(matrix([[1,0],[1,1]]))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1, 0], [-1, 1]])" style="vertical-align:-13px" width="58" height="30" src="section-01-4-inverses-algebraic-properties-of-matrices_images/math56.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<p class="P4">&nbsp;</p>
+<p class="P4">&nbsp;</p>
+<p class="P4">&nbsp;</p>
+</body>
+</html>

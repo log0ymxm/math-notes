@@ -1,0 +1,438 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>section-01-7-diagonal-triangular-and-symmetric-matrices</title>
+<style type="text/css">
+/* <![CDATA[ */
+span.S0, a.S0 { font-family:sans-serif; font-size:11pt; font-style:normal; font-weight:normal; color:#000000; }
+span.S1, a.S1 { font-family:monospace; font-size:11pt; font-style:normal; font-weight:normal; color:#ff0000; }
+span.S2, a.S2 { font-family:monospace; font-size:11pt; font-style:normal; font-weight:normal; color:#5500ff; }
+p.P0 { text-align:justify; margin-top:0pt; margin-left:0pt; margin-right:0pt; margin-bottom:0pt; text-indent:0pt; }
+p.P1 { text-align:left; white-space:pre; margin-top: 0; margin-left: 0; margin-right: 0; margin-bottom: 0; }
+div.C2 { padding-top:0pt; padding-bottom:0pt; padding-left:5.7pt; border-left-width:1pt; border-left-style: solid; border-color: #808080; border-right-width: 0; border-right-style: none; border-top-width: 0; border-top-style: none; border-bottom-width: 0; border-bottom-style: none; }
+div.Csep3in { padding: 0; height: 0; width: 5pt; border-bottom: 1px solid #808080; margin-top:2.85pt; margin-bottom: 0; }
+div.Csep3out { padding: 0; height: 0; width: 3pt; border-bottom: 1px solid #808080; margin-top: 0;  margin-bottom: 0; }
+div.Csep3end { padding: 0; height: 0; width: 5pt; border-bottom: 1px solid #808080; margin-bottom:2.85pt; margin-top: 0; }
+p.P4 { margin-top:0pt; margin-left:0pt; margin-right:0pt; margin-bottom:0pt; text-indent:0pt; }
+body { background-color:white; }
+@page { margin:56pt; size:612pt 792pt; background-color:white; }
+/* ]]> */
+</style>
+</head>
+<body>
+<p class="P0">&nbsp;</p>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">inverse(matrix([[4,0,0],[0,0,0],[0,0,5]]))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="FAIL" style="vertical-align:-7px" width="34" height="20" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math0.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">matrix([[8,-2,6],[-1,-2,0],[-20,4,-8]])*matrix([[-3,0,0],[0,5,0],[0,0,2]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-24, -10, 12], [3, -10, 0], [60, 20, -16]])" style="vertical-align:-21px" width="108" height="48" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math1.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a:=matrix([[1,0],[0,-2]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1, 0], [0, -2]])" style="vertical-align:-13px" width="58" height="30" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math2.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a^2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1, 0], [0, 4]])" style="vertical-align:-11px" width="48" height="29" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math3.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a^-2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1, 0], [0, 1/4]])" style="vertical-align:-17px" width="47" height="37" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math4.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(1/4)*(5/3)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="5/12" style="vertical-align:-11px" width="23" height="27" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math5.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%+(2/3)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="13/12" style="vertical-align:-11px" width="23" height="27" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math6.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(1/-13)*(5/3)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-5/39" style="vertical-align:-12px" width="33" height="28" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math7.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%+(2/3)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="7/13" style="vertical-align:-12px" width="23" height="27" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math8.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">-3*(-1/4)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="3/4" style="vertical-align:-11px" width="18" height="27" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math9.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%+(1/-13)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="35/52" style="vertical-align:-12px" width="23" height="29" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math10.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">-3 * (-13/12)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="13/4" style="vertical-align:-11px" width="23" height="27" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math11.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%+(7/13)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="197/52" style="vertical-align:-12px" width="29" height="28" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math12.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">linalg::rref(matrix([[3,-5,2,2],[0,4,1,-13],[0,0,2,-6]]))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="FAIL" style="vertical-align:-7px" width="34" height="20" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math13.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">[3,-5,2,2]/3</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="[1, -5/3, 2/3, 2/3]" style="vertical-align:-13px" width="81" height="29" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math14.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">[0,4,1,-13]/4</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="[0, 1, 1/4, -13/4]" style="vertical-align:-12px" width="84" height="29" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math15.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(1/4)*(5/3)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="5/12" style="vertical-align:-11px" width="23" height="27" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math16.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%+(2/3)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="13/12" style="vertical-align:-11px" width="23" height="27" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math17.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(-13/4)*(5/3)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-65/12" style="vertical-align:-11px" width="33" height="27" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math18.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%+(2/3)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-19/4" style="vertical-align:-11px" width="33" height="27" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math19.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(-13/4)+(-3/4)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-4" style="vertical-align:-7px" width="26" height="20" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math20.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(-13/4)+(3/4)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-5/2" style="vertical-align:-11px" width="28" height="27" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math21.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">-3*(-13/12)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="13/4" style="vertical-align:-11px" width="23" height="27" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math22.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">+(-19/4)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-19/4" style="vertical-align:-11px" width="33" height="27" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math23.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">-3*(-13/12)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="13/4" style="vertical-align:-11px" width="23" height="27" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math24.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%+(-19/4)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-3/2" style="vertical-align:-11px" width="28" height="27" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math25.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">linalg::rref(matrix([[3,-5,2,2],[0,4,1,-13],[0,0,2,-6]]))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="FAIL" style="vertical-align:-7px" width="34" height="20" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math26.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">linalg::rref(matrix([[2,0,0,4],[4,1,0,-5],[-3,-2,3,2]]))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="FAIL" style="vertical-align:-7px" width="34" height="20" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math27.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">rref(matrix([[2,0,0,4],[4,1,0,-5],[-3,-2,3,2]]))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="rref(matrix([[2, 0, 0, 4], [4, 1, 0, -5], [-3, -2, 3, 2]]))" style="vertical-align:-20px" width="138" height="43" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math28.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">linalg::gaussJordan(matrix([[2,0,0,4],[4,1,0,-5],[-3,-2,3,2]]))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1, 0, 0, 2], [0, 1, 0, -13], [0, 0, 1, -6]])" style="vertical-align:-20px" width="88" height="43" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math29.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">linalg::gaussJordan(matrix([[3,-5,2,2],[0,4,1,-13],[0,0,2,-6]]))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1, 0, 0, -3/2], [0, 1, 0, -5/2], [0, 0, 1, -3]])" style="vertical-align:-27px" width="85" height="61" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math30.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a:=matrix([[a,b,c],[d,e,f],[g,h,i]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[matrix([[1, 0], [0, -2]]), b, c], [d, e, f], [g, h, i]])" style="vertical-align:-25px" width="106" height="65" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math31.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">I</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="I" style="vertical-align:-7px" width="13" height="20" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math32.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">i:=matrix([[1,0,0],[0,1,0],[0,0,1]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1, 0, 0], [0, 1, 0], [0, 0, 1]])" style="vertical-align:-15px" width="59" height="37" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math33.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">reset()</span></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a:=matrix([[a,b,c],[d,e,f],[g,h,i]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[a, b, c], [d, e, f], [g, h, i]])" style="vertical-align:-20px" width="62" height="43" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math34.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">i:=matrix([[1,0,0],[0,1,0],[0,0,1]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1, 0, 0], [0, 1, 0], [0, 0, 1]])" style="vertical-align:-15px" width="59" height="37" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math35.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(a^2)-(3*a)-(4*i)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[matrix([[a^2 - 3*a + 2*b*d + 2*c*g - 4, a*b - 3*b + b*e + c*h, a*c - 3*c + b*f + c*i], [a*d - 3*d + d*e + f*g, e^2 - 3*e + 2*b*d + c*g + f*h - 4, c*d - 3*f + e*f + f*i], [a*g - 3*g + d*h + g*i, b*g - 3*h + e*h + h*i, i^2 - 3*i + b*d + 2*c*g + f*h - 4]]), matrix([[a*b - 3*b + b*e + c*h, b^2, b*c], [b*d, 2*b*e - 3*b + c*h, b*f], [b*g, b*h, b*e - 3*b + b*i + c*h]]), matrix([[a*c - 2*c + b*f, b*c, c^2], [c*d, b*f - 2*c + c*e, c*f], [c*g, c*h, b*f - 2*c + c*i]])], [matrix([[a*d - 3*d + d*e + f*g, b*d, c*d], [d^2, 2*d*e - 3*d + f*g, d*f], [d*g, d*h, d*e - 3*d + d*i + f*g]]), e^2 - 3*e + b*d + f*h - 4, matrix([[c*d - 2*f + e*f, 0, 0], [0, c*d - 2*f + e*f, 0], [0, 0, c*d - 2*f + e*f]])], [matrix([[a*g - 2*g + d*h, b*g, c*g], [d*g, d*h - 2*g + e*g, f*g], [g^2, g*h, d*h - 2*g + g*i]]), matrix([[b*g - 2*h + e*h, 0, 0], [0, b*g - 2*h + e*h, 0], [0, 0, b*g - 2*h + e*h]]), matrix([[c*g + f*h - 6, 0, 0], [0, c*g + f*h - 6, 0], [0, 0, c*g + f*h - 6]])]])" style="vertical-align:-89px" width="495" height="422" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math36.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(a^2)-(3*a)-(4*i) = 0</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[matrix([[a^2 - 3*a + 2*b*d + 2*c*g - 4, a*b - 3*b + b*e + c*h, a*c - 3*c + b*f + c*i], [a*d - 3*d + d*e + f*g, e^2 - 3*e + 2*b*d + c*g + f*h - 4, c*d - 3*f + e*f + f*i], [a*g - 3*g + d*h + g*i, b*g - 3*h + e*h + h*i, i^2 - 3*i + b*d + 2*c*g + f*h - 4]]), matrix([[a*b - 3*b + b*e + c*h, b^2, b*c], [b*d, 2*b*e - 3*b + c*h, b*f], [b*g, b*h, b*e - 3*b + b*i + c*h]]), matrix([[a*c - 2*c + b*f, b*c, c^2], [c*d, b*f - 2*c + c*e, c*f], [c*g, c*h, b*f - 2*c + c*i]])], [matrix([[a*d - 3*d + d*e + f*g, b*d, c*d], [d^2, 2*d*e - 3*d + f*g, d*f], [d*g, d*h, d*e - 3*d + d*i + f*g]]), e^2 - 3*e + b*d + f*h - 4, matrix([[c*d - 2*f + e*f, 0, 0], [0, c*d - 2*f + e*f, 0], [0, 0, c*d - 2*f + e*f]])], [matrix([[a*g - 2*g + d*h, b*g, c*g], [d*g, d*h - 2*g + e*g, f*g], [g^2, g*h, d*h - 2*g + g*i]]), matrix([[b*g - 2*h + e*h, 0, 0], [0, b*g - 2*h + e*h, 0], [0, 0, b*g - 2*h + e*h]]), matrix([[c*g + f*h - 6, 0, 0], [0, c*g + f*h - 6, 0], [0, 0, c*g + f*h - 6]])]]) = 0" style="vertical-align:-89px" width="495" height="422" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math37.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a:=matrix([[a,0,0],[0,b,0],[0,0,c]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[matrix([[matrix([[a, b, c], [d, e, f], [g, h, i]]), b, c], [d, e, f], [g, h, matrix([[1, 0, 0], [0, 1, 0], [0, 0, 1]])]]), 0, 0], [0, b, 0], [0, 0, c]])" style="vertical-align:-20px" width="199" height="127" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math38.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">A:=matrix([[a,0,0],[0,b,0],[0,0,c]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[matrix([[matrix([[matrix([[matrix([[matrix([[matrix([[a, b, c], [d, e, f], [g, h, i]]), b, c], [d, e, f], [g, h, matrix([[1, 0, 0], [0, 1, 0], [0, 0, 1]])]]), 0, 0], [0, b, 0], [0, 0, c]]), b, c], [d, e, f], [g, h, matrix([[1, 0, 0], [0, 1, 0], [0, 0, 1]])]]), b, c], [d, e, f], [g, h, matrix([[1, 0, 0], [0, 1, 0], [0, 0, 1]])]]), 0, 0], [0, b, 0], [0, 0, c]]), 0, 0], [0, b, 0], [0, 0, c]])" style="vertical-align:-48px" width="362" height="307" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math39.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">reset()</span></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">A:=matrix([[a,0,0],[0,b,0],[0,0,c]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[a, 0, 0], [0, b, 0], [0, 0, c]])" style="vertical-align:-17px" width="61" height="42" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math40.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">i:=matrix([[1,0,0],[0,1,0],[0,0,1]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1, 0, 0], [0, 1, 0], [0, 0, 1]])" style="vertical-align:-15px" width="59" height="37" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math41.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(a^2)-(3*a)-(4*i) = 0</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[a^2 - 3*a - 4, 0, 0], [0, a^2 - 3*a - 4, 0], [0, 0, a^2 - 3*a - 4]]) = 0" style="vertical-align:-28px" width="229" height="65" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math42.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">A^2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[a^2, 0, 0], [0, b^2, 0], [0, 0, c^2]])" style="vertical-align:-24px" width="74" height="59" src="section-01-7-diagonal-triangular-and-symmetric-matrices_images/math43.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1">&nbsp;</p>
+</div>
+<div class="Csep3end"></div>
+<p class="P4">&nbsp;</p>
+</body>
+</html>

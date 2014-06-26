@@ -1,0 +1,464 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>section-01-3-matrices-and-matrix-operations</title>
+<style type="text/css">
+/* <![CDATA[ */
+span.S0, a.S0 { font-family:sans-serif; font-size:11pt; font-style:normal; font-weight:normal; color:#000000; }
+span.S1, a.S1 { font-family:monospace; font-size:11pt; font-style:normal; font-weight:normal; color:#ff0000; }
+span.S2, a.S2 { font-family:monospace; font-size:11pt; font-style:normal; font-weight:normal; color:#5500ff; }
+p.P0 { margin-top:0pt; margin-left:0pt; margin-right:0pt; margin-bottom:0pt; text-indent:0pt; }
+p.P1 { text-align:left; white-space:pre; margin-top: 0; margin-left: 0; margin-right: 0; margin-bottom: 0; }
+div.C2 { padding-top:0pt; padding-bottom:0pt; padding-left:5.7pt; border-left-width:1pt; border-left-style: solid; border-color: #808080; border-right-width: 0; border-right-style: none; border-top-width: 0; border-top-style: none; border-bottom-width: 0; border-bottom-style: none; }
+div.Csep3in { padding: 0; height: 0; width: 5pt; border-bottom: 1px solid #808080; margin-top:2.85pt; margin-bottom: 0; }
+div.Csep3out { padding: 0; height: 0; width: 3pt; border-bottom: 1px solid #808080; margin-top: 0;  margin-bottom: 0; }
+div.Csep3end { padding: 0; height: 0; width: 5pt; border-bottom: 1px solid #808080; margin-bottom:2.85pt; margin-top: 0; }
+body { background-color:white; }
+@page { margin:56pt; size:595.3pt 841.9pt; background-color:white; }
+/* ]]> */
+</style>
+</head>
+<body>
+<p class="P0">&nbsp;</p>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a:= matrix([[1, 2],[3, 4]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1, 2], [3, 4]])" style="vertical-align:-12px" width="48" height="29" src="section-01-3-matrices-and-matrix-operations_images/math0.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">b:= matrix([[3,2],[9,7]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[3, 2], [9, 7]])" style="vertical-align:-12px" width="48" height="29" src="section-01-3-matrices-and-matrix-operations_images/math1.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a + b</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[4, 4], [12, 11]])" style="vertical-align:-11px" width="58" height="29" src="section-01-3-matrices-and-matrix-operations_images/math2.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">8*3</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="24" style="vertical-align:-7px" width="21" height="20" src="section-01-3-matrices-and-matrix-operations_images/math3.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">6*4</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="24" style="vertical-align:-7px" width="21" height="20" src="section-01-3-matrices-and-matrix-operations_images/math4.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">42*4</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="168" style="vertical-align:-7px" width="27" height="20" src="section-01-3-matrices-and-matrix-operations_images/math5.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">4*56</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="224" style="vertical-align:-7px" width="27" height="20" src="section-01-3-matrices-and-matrix-operations_images/math6.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">4*14</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="56" style="vertical-align:-7px" width="21" height="20" src="section-01-3-matrices-and-matrix-operations_images/math7.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">168+56</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="224" style="vertical-align:-7px" width="27" height="20" src="section-01-3-matrices-and-matrix-operations_images/math8.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">28+14</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="42" style="vertical-align:-7px" width="21" height="20" src="section-01-3-matrices-and-matrix-operations_images/math9.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%*4</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="168" style="vertical-align:-7px" width="27" height="20" src="section-01-3-matrices-and-matrix-operations_images/math10.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a := matrix([[3,0],[-1,2],[1,1]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[3, 0], [-1, 2], [1, 1]])" style="vertical-align:-18px" width="59" height="42" src="section-01-3-matrices-and-matrix-operations_images/math11.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">b := matrix([[4,-1],[0,2]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[4, -1], [0, 2]])" style="vertical-align:-11px" width="58" height="30" src="section-01-3-matrices-and-matrix-operations_images/math12.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">c := matrix([[1,4,2],[3,1,5]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1, 4, 2], [3, 1, 5]])" style="vertical-align:-12px" width="60" height="29" src="section-01-3-matrices-and-matrix-operations_images/math13.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">d := matrix([[1,5,2],[-1,0,1],[3,2,4]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1, 5, 2], [-1, 0, 1], [3, 2, 4]])" style="vertical-align:-18px" width="71" height="42" src="section-01-3-matrices-and-matrix-operations_images/math14.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">e := matrix([[6,1,3],[-1,1,2],[4,1,3]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[6, 1, 3], [-1, 1, 2], [4, 1, 3]])" style="vertical-align:-18px" width="71" height="43" src="section-01-3-matrices-and-matrix-operations_images/math15.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">transpose(d)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1, -1, 3], [5, 0, 2], [2, 1, 4]])" style="vertical-align:-16px" width="71" height="42" src="section-01-3-matrices-and-matrix-operations_images/math16.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%*2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[2, -2, 6], [10, 0, 4], [4, 2, 8]])" style="vertical-align:-17px" width="76" height="42" src="section-01-3-matrices-and-matrix-operations_images/math17.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">-e</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-6, -1, -3], [1, -1, -2], [-4, -1, -3]])" style="vertical-align:-21px" width="93" height="48" src="section-01-3-matrices-and-matrix-operations_images/math18.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">transpose(d)*2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[2, -2, 6], [10, 0, 4], [4, 2, 8]])" style="vertical-align:-17px" width="76" height="42" src="section-01-3-matrices-and-matrix-operations_images/math19.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%-e</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-4, -3, 3], [11, -1, 2], [0, 1, 5]])" style="vertical-align:-18px" width="81" height="44" src="section-01-3-matrices-and-matrix-operations_images/math20.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%*a</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-6, -3], [36, 0], [4, 7]])" style="vertical-align:-16px" width="69" height="42" src="section-01-3-matrices-and-matrix-operations_images/math21.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">4*b</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[16, -4], [0, 8]])" style="vertical-align:-12px" width="60" height="31" src="section-01-3-matrices-and-matrix-operations_images/math22.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">c</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1, 4, 2], [3, 1, 5]])" style="vertical-align:-12px" width="60" height="29" src="section-01-3-matrices-and-matrix-operations_images/math23.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">2*b</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[8, -2], [0, 4]])" style="vertical-align:-11px" width="58" height="30" src="section-01-3-matrices-and-matrix-operations_images/math24.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(4*b)*c</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[4, 60, 12], [24, 8, 40]])" style="vertical-align:-11px" width="75" height="29" src="section-01-3-matrices-and-matrix-operations_images/math25.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">transpose(-a *c) + (5 * transpose(d))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[2, -10, 11], [13, 2, 5], [4, -3, 13]])" style="vertical-align:-21px" width="88" height="48" src="section-01-3-matrices-and-matrix-operations_images/math26.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">5*transpose(d)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[5, -5, 15], [25, 0, 10], [10, 5, 20]])" style="vertical-align:-16px" width="81" height="42" src="section-01-3-matrices-and-matrix-operations_images/math27.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">-a*c</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-3, -12, -6], [-5, 2, -8], [-4, -5, -7]])" style="vertical-align:-21px" width="98" height="48" src="section-01-3-matrices-and-matrix-operations_images/math28.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">transpose(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-3, -5, -4], [-12, 2, -5], [-6, -8, -7]])" style="vertical-align:-21px" width="98" height="48" src="section-01-3-matrices-and-matrix-operations_images/math29.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">transpose(b*transpose(a) - 2*c)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[10, -6], [-14, 2], [-1, -8]])" style="vertical-align:-21px" width="76" height="48" src="section-01-3-matrices-and-matrix-operations_images/math30.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">transpose(b)*(c*transpose(c) - transpose(a)*a)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[40, 72], [26, 42]])" style="vertical-align:-12px" width="58" height="29" src="section-01-3-matrices-and-matrix-operations_images/math31.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">4*18</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="72" style="vertical-align:-7px" width="21" height="20" src="section-01-3-matrices-and-matrix-operations_images/math32.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">transpose(d)*transpose(e) - transpose(e*d)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[0, 0, 0], [0, 0, 0], [0, 0, 0]])" style="vertical-align:-15px" width="59" height="37" src="section-01-3-matrices-and-matrix-operations_images/math33.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a := matrix([[3,-2,7],[6,5,4],[0,4,9]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[3, -2, 7], [6, 5, 4], [0, 4, 9]])" style="vertical-align:-16px" width="71" height="42" src="section-01-3-matrices-and-matrix-operations_images/math34.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">b := matrix([[6,-2,4],[0,1,3],[7,7,5]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[6, -2, 4], [0, 1, 3], [7, 7, 5]])" style="vertical-align:-17px" width="71" height="42" src="section-01-3-matrices-and-matrix-operations_images/math35.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a * b</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[67, 41, 41], [64, 21, 59], [63, 67, 57]])" style="vertical-align:-18px" width="76" height="42" src="section-01-3-matrices-and-matrix-operations_images/math36.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">b * a</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[6, -6, 70], [6, 17, 31], [63, 41, 122]])" style="vertical-align:-18px" width="87" height="44" src="section-01-3-matrices-and-matrix-operations_images/math37.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a * a</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-3, 12, 76], [48, 29, 98], [24, 56, 97]])" style="vertical-align:-18px" width="81" height="43" src="section-01-3-matrices-and-matrix-operations_images/math38.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">b * b</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[64, 14, 38], [21, 22, 18], [77, 28, 74]])" style="vertical-align:-18px" width="76" height="42" src="section-01-3-matrices-and-matrix-operations_images/math39.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">gaussJordan(matrix([[1,-2,3,-3],[2,1,0,0],[0,-3,4,1],[1,0,1,5]]))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="gaussJordan(matrix([[1, -2, 3, -3], [2, 1, 0, 0], [0, -3, 4, 1], [1, 0, 1, 5]]))" style="vertical-align:-24px" width="169" height="54" src="section-01-3-matrices-and-matrix-operations_images/math40.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a := </span><span class="S1">matrix([[1,-2,3,-3],[2,1,0,0],[0,-3,4,1],[1,0,1,5]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1, -2, 3, -3], [2, 1, 0, 0], [0, -3, 4, 1], [1, 0, 1, 5]])" style="vertical-align:-24px" width="95" height="54" src="section-01-3-matrices-and-matrix-operations_images/math41.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">gauss(a)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="gauss(matrix([[1, -2, 3, -3], [2, 1, 0, 0], [0, -3, 4, 1], [1, 0, 1, 5]]))" style="vertical-align:-24px" width="139" height="54" src="section-01-3-matrices-and-matrix-operations_images/math42.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">rref(a)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="rref(matrix([[1, -2, 3, -3], [2, 1, 0, 0], [0, -3, 4, 1], [1, 0, 1, 5]]))" style="vertical-align:-24px" width="132" height="54" src="section-01-3-matrices-and-matrix-operations_images/math43.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">linalg::gaussJordan(a)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]])" style="vertical-align:-21px" width="75" height="48" src="section-01-3-matrices-and-matrix-operations_images/math44.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">linalg::gaussJordan(matrix([[3,3,3,-3],[-1,-5,-2,3],[0,-4,1,0]]))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1, 0, 0, 1/4], [0, 1, 0, -1/4], [0, 0, 1, -1]])" style="vertical-align:-27px" width="85" height="60" src="section-01-3-matrices-and-matrix-operations_images/math45.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a := matrix([[2,1],[1,2]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[2, 1], [1, 2]])" style="vertical-align:-11px" width="48" height="29" src="section-01-3-matrices-and-matrix-operations_images/math46.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a*a</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[5, 4], [4, 5]])" style="vertical-align:-11px" width="48" height="29" src="section-01-3-matrices-and-matrix-operations_images/math47.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1">&nbsp;</p>
+</div>
+<div class="Csep3end"></div>
+<p class="P0">&nbsp;</p>
+<p class="P0">&nbsp;</p>
+</body>
+</html>

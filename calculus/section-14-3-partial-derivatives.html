@@ -1,0 +1,734 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>section-14-3-partial-derivatives</title>
+<style type="text/css">
+/* <![CDATA[ */
+span.S0, a.S0 { font-family:sans-serif; font-size:11pt; font-style:normal; font-weight:normal; color:#000000; }
+span.S1, a.S1 { font-family:monospace; font-size:11pt; font-style:normal; font-weight:normal; color:#ff0000; }
+span.S2, a.S2 { font-family:monospace; font-size:11pt; font-style:normal; font-weight:normal; color:#5500ff; }
+p.P0 { text-align:justify; margin-top:0pt; margin-left:0pt; margin-right:0pt; margin-bottom:0pt; text-indent:0pt; }
+p.P1 { text-align:left; white-space:pre; margin-top: 0; margin-left: 0; margin-right: 0; margin-bottom: 0; }
+div.C2 { padding-top:0pt; padding-bottom:0pt; padding-left:5.7pt; border-left-width:1pt; border-left-style: solid; border-color: #808080; border-right-width: 0; border-right-style: none; border-top-width: 0; border-top-style: none; border-bottom-width: 0; border-bottom-style: none; }
+div.Csep3in { padding: 0; height: 0; width: 5pt; border-bottom: 1px solid #808080; margin-top:2.85pt; margin-bottom: 0; }
+div.Csep3out { padding: 0; height: 0; width: 3pt; border-bottom: 1px solid #808080; margin-top: 0;  margin-bottom: 0; }
+div.Csep3end { padding: 0; height: 0; width: 5pt; border-bottom: 1px solid #808080; margin-bottom:2.85pt; margin-top: 0; }
+p.P4 { margin-top:0pt; margin-left:0pt; margin-right:0pt; margin-bottom:0pt; text-indent:0pt; }
+body { background-color:white; }
+@page { margin:56pt; size:612pt 792pt; background-color:white; }
+/* ]]> */
+</style>
+</head>
+<body>
+<p class="P0">&nbsp;</p>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(sqrt(x), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1/(2*x^(1/2))" style="vertical-align:-15px" width="37" height="30" src="section-14-3-partial-derivatives_images/math0.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(ln(t), t)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1/t" style="vertical-align:-11px" width="18" height="26" src="section-14-3-partial-derivatives_images/math1.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff((2*x + 3*y)^10)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(2*x + 3*y)^10" style="vertical-align:-7px" width="66" height="23" src="section-14-3-partial-derivatives_images/math2.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff((2*x + 3*y)^10, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="20*(2*x + 3*y)^9" style="vertical-align:-7px" width="76" height="23" src="section-14-3-partial-derivatives_images/math3.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(tan(x*y), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="y*(tan(x*y)^2 + 1)" style="vertical-align:-7px" width="82" height="23" src="section-14-3-partial-derivatives_images/math4.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(x/y, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1/y" style="vertical-align:-13px" width="18" height="28" src="section-14-3-partial-derivatives_images/math5.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(x/y, y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-x/y^2" style="vertical-align:-17px" width="31" height="30" src="section-14-3-partial-derivatives_images/math6.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(((a*x)+(b*y))/((c*x)+(d*y)), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="a/(c*x + d*y) - (c*(a*x + b*y))/(c*x + d*y)^2" style="vertical-align:-17px" width="121" height="36" src="section-14-3-partial-derivatives_images/math7.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(x^(y/z), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(x^(y/z - 1)*y)/z" style="vertical-align:-12px" width="41" height="40" src="section-14-3-partial-derivatives_images/math8.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(x^(y/z), y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(x^(y/z)*ln(x))/z" style="vertical-align:-12px" width="53" height="34" src="section-14-3-partial-derivatives_images/math9.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(x^(y/x), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(x^(y/x - 1)*y)/x - (x^(y/x)*y*ln(x))/x^2" style="vertical-align:-15px" width="105" height="42" src="section-14-3-partial-derivatives_images/math10.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(x^(y/z), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(x^(y/z - 1)*y)/z" style="vertical-align:-12px" width="41" height="40" src="section-14-3-partial-derivatives_images/math11.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(x^(y/x), y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(x^(y/x)*ln(x))/x" style="vertical-align:-11px" width="54" height="33" src="section-14-3-partial-derivatives_images/math12.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(2^x, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="2^x*ln(2)" style="vertical-align:-7px" width="46" height="22" src="section-14-3-partial-derivatives_images/math13.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(x^(y/z), y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(x^(y/z)*ln(x))/z" style="vertical-align:-12px" width="53" height="34" src="section-14-3-partial-derivatives_images/math14.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(sqrt(x^2 + y^2 + z^2), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="x/(x^2 + y^2 + z^2)^(1/2)" style="vertical-align:-23px" width="73" height="36" src="section-14-3-partial-derivatives_images/math15.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(sqrt(x^2 + y^2 + z^2), y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="y/(x^2 + y^2 + z^2)^(1/2)" style="vertical-align:-23px" width="73" height="38" src="section-14-3-partial-derivatives_images/math16.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(sqrt(x^2 + y^2 + z^2), z)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="z/(x^2 + y^2 + z^2)^(1/2)" style="vertical-align:-23px" width="73" height="37" src="section-14-3-partial-derivatives_images/math17.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(sqrt(x), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1/(2*x^(1/2))" style="vertical-align:-15px" width="37" height="30" src="section-14-3-partial-derivatives_images/math18.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(x^2 + 2*y^2 + 3*z^2 = 1, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="2*x = 0" style="vertical-align:-7px" width="43" height="20" src="section-14-3-partial-derivatives_images/math19.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(sin(m*x + n*y)^2, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="2*m*cos(m*x + n*y)*sin(m*x + n*y)" style="vertical-align:-7px" width="161" height="21" src="section-14-3-partial-derivatives_images/math20.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(%, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="2*m^2*cos(m*x + n*y)^2 - 2*m^2*sin(m*x + n*y)^2" style="vertical-align:-7px" width="206" height="23" src="section-14-3-partial-derivatives_images/math21.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(E^(x*E^y), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="exp(x*exp(y))*exp(y)" style="vertical-align:-7px" width="41" height="27" src="section-14-3-partial-derivatives_images/math22.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(%, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="exp(x*exp(y))*exp(2*y)" style="vertical-align:-7px" width="47" height="27" src="section-14-3-partial-derivatives_images/math23.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(E^(x*E^y), y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="x*exp(x*exp(y))*exp(y)" style="vertical-align:-7px" width="49" height="27" src="section-14-3-partial-derivatives_images/math24.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(%, y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="x^2*exp(x*exp(y))*exp(2*y) + x*exp(x*exp(y))*exp(y)" style="vertical-align:-7px" width="110" height="27" src="section-14-3-partial-derivatives_images/math25.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(E^(x*E^y), y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="x*exp(x*exp(y))*exp(y)" style="vertical-align:-7px" width="49" height="27" src="section-14-3-partial-derivatives_images/math26.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(E^(x*E^y), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="exp(x*exp(y))*exp(y)" style="vertical-align:-7px" width="41" height="27" src="section-14-3-partial-derivatives_images/math27.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(%, y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="exp(x*exp(y))*exp(y) + x*exp(x*exp(y))*exp(2*y)" style="vertical-align:-7px" width="98" height="27" src="section-14-3-partial-derivatives_images/math28.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(E^(x*E^y), y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="x*exp(x*exp(y))*exp(y)" style="vertical-align:-7px" width="49" height="27" src="section-14-3-partial-derivatives_images/math29.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(%, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="exp(x*exp(y))*exp(y) + x*exp(x*exp(y))*exp(2*y)" style="vertical-align:-7px" width="98" height="27" src="section-14-3-partial-derivatives_images/math30.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(E^(x*y*z^2), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="y*z^2*exp(x*y*z^2)" style="vertical-align:-7px" width="53" height="28" src="section-14-3-partial-derivatives_images/math31.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(%, y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="z^2*exp(x*y*z^2) + x*y*z^4*exp(x*y*z^2)" style="vertical-align:-7px" width="108" height="28" src="section-14-3-partial-derivatives_images/math32.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(%, z)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="2*z*exp(x*y*z^2) + 2*x^2*y^2*z^5*exp(x*y*z^2) + 6*x*y*z^3*exp(x*y*z^2)" style="vertical-align:-7px" width="202" height="28" src="section-14-3-partial-derivatives_images/math33.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(x^2 + y^2, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="2*x" style="vertical-align:-7px" width="24" height="20" src="section-14-3-partial-derivatives_images/math34.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(%, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="2" style="vertical-align:-7px" width="16" height="20" src="section-14-3-partial-derivatives_images/math35.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(ln(sqrt(x^2 + y^2)), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="x/(x^2 + y^2)" style="vertical-align:-17px" width="42" height="30" src="section-14-3-partial-derivatives_images/math36.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(%, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1/(x^2 + y^2) - (2*x^2)/(x^2 + y^2)^2" style="vertical-align:-17px" width="98" height="38" src="section-14-3-partial-derivatives_images/math37.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(cosh(x), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="sinh(x)" style="vertical-align:-7px" width="41" height="21" src="section-14-3-partial-derivatives_images/math38.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(sinh(x), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="cosh(x)" style="vertical-align:-7px" width="43" height="21" src="section-14-3-partial-derivatives_images/math39.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">cosh(x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="cosh(x)" style="vertical-align:-7px" width="43" height="21" src="section-14-3-partial-derivatives_images/math40.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="cosh(x)" style="vertical-align:-7px" width="43" height="21" src="section-14-3-partial-derivatives_images/math41.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(sin(x)*cosh(y) + cos(x)*sinh(y), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="cos(x)*cosh(y) - sin(x)*sinh(y)" style="vertical-align:-7px" width="146" height="21" src="section-14-3-partial-derivatives_images/math42.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(%, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="- cos(x)*sinh(y) - cosh(y)*sin(x)" style="vertical-align:-7px" width="156" height="21" src="section-14-3-partial-derivatives_images/math43.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a:= %</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="- cos(x)*sinh(y) - cosh(y)*sin(x)" style="vertical-align:-7px" width="156" height="21" src="section-14-3-partial-derivatives_images/math44.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(sin(x)*cosh(y) + cos(x)*sinh(y), y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="cos(x)*cosh(y) + sin(x)*sinh(y)" style="vertical-align:-7px" width="146" height="21" src="section-14-3-partial-derivatives_images/math45.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(%, y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="cos(x)*sinh(y) + cosh(y)*sin(x)" style="vertical-align:-7px" width="146" height="21" src="section-14-3-partial-derivatives_images/math46.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a - %</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="- 2*cos(x)*sinh(y) - 2*cosh(y)*sin(x)" style="vertical-align:-7px" width="174" height="21" src="section-14-3-partial-derivatives_images/math47.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(E^(-x)*cos(y) - E^(-y)*cos(x), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="exp(-y)*sin(x) - exp(-x)*cos(y)" style="vertical-align:-7px" width="112" height="24" src="section-14-3-partial-derivatives_images/math48.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(%, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="exp(-x)*cos(y) + exp(-y)*cos(x)" style="vertical-align:-7px" width="114" height="24" src="section-14-3-partial-derivatives_images/math49.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">plot(((x^3)*y - X*y^3)/(x^2 + y^2), x=-5..5, y=-5..5)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="MuPAD graphics" src="section-14-3-partial-derivatives_images/plt1.png" width="340pt" height="227pt"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(diff(E^(x*E^y), y), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="exp(x*exp(y))*exp(y) + x*exp(x*exp(y))*exp(2*y)" style="vertical-align:-7px" width="98" height="27" src="section-14-3-partial-derivatives_images/math50.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(((x^3)*y - X*y^3)/(x^2 + y^2), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(3*x^2*y)/(x^2 + y^2) + (2*x*(X*y^3 - x^3*y))/(x^2 + y^2)^2" style="vertical-align:-17px" width="129" height="38" src="section-14-3-partial-derivatives_images/math51.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">plot(((x^3)*y - x*y^3)/(x^2 + y^2), x=-5..5, y=-5..5)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="MuPAD graphics" src="section-14-3-partial-derivatives_images/plt2.png" width="340pt" height="227pt"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">plotfunc3d(((x^3)*y - x*y^3)/(x^2 + y^2), x=-5..5, y=-5..5)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="MuPAD graphics" src="section-14-3-partial-derivatives_images/plt3.png" width="340pt" height="227pt"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(((x^3)*y - x*y^3)/(x^2 + y^2), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(3*x^2*y - y^3)/(x^2 + y^2) + (2*x*(x*y^3 - x^3*y))/(x^2 + y^2)^2" style="vertical-align:-17px" width="144" height="38" src="section-14-3-partial-derivatives_images/math52.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%(0,0)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(3*x(0, 0)^2*y(0, 0) - y(0, 0)^3)/(x(0, 0)^2 + y(0, 0)^2) + (2*x(0, 0)*(x(0, 0)*y(0, 0)^3 - x(0, 0)^3*y(0, 0)))/(x(0, 0)^2 + y(0, 0)^2)^2" style="vertical-align:-34px" width="253" height="88" src="section-14-3-partial-derivatives_images/math53.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(((x^3)*y - x*y^3)/(x^2 + y^2), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(3*x^2*y - y^3)/(x^2 + y^2) + (2*x*(x*y^3 - x^3*y))/(x^2 + y^2)^2" style="vertical-align:-17px" width="144" height="38" src="section-14-3-partial-derivatives_images/math54.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a:=%</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(3*x^2*y - y^3)/(x^2 + y^2) + (2*x*(x*y^3 - x^3*y))/(x^2 + y^2)^2" style="vertical-align:-17px" width="144" height="38" src="section-14-3-partial-derivatives_images/math55.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a(1,1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(3*x(1, 1)^2*y(1, 1) - y(1, 1)^3)/(x(1, 1)^2 + y(1, 1)^2) + (2*x(1, 1)*(x(1, 1)*y(1, 1)^3 - x(1, 1)^3*y(1, 1)))/(x(1, 1)^2 + y(1, 1)^2)^2" style="vertical-align:-34px" width="253" height="88" src="section-14-3-partial-derivatives_images/math56.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a(x=1, y=1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(3*x(x = 1, y = 1)^2*y(x = 1, y = 1) - y(x = 1, y = 1)^3)/(x(x = 1, y = 1)^2 + y(x = 1, y = 1)^2) + (2*x(x = 1, y = 1)*(x(x = 1, y = 1)*y(x = 1, y = 1)^3 - x(x = 1, y = 1)^3*y(x = 1, y = 1)))/(x(x = 1, y = 1)^2 + y(x = 1, y = 1)^2)^2" style="vertical-align:-61px" width="159" height="144" src="section-14-3-partial-derivatives_images/math57.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(((x^3)*y - x*y^3)/(x^2 + y^2), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(3*x^2*y - y^3)/(x^2 + y^2) + (2*x*(x*y^3 - x^3*y))/(x^2 + y^2)^2" style="vertical-align:-17px" width="144" height="38" src="section-14-3-partial-derivatives_images/math58.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(%, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(2*(x*y^3 - x^3*y))/(x^2 + y^2)^2 - (8*x^2*(x*y^3 - x^3*y))/(x^2 + y^2)^3 - (4*x*(3*x^2*y - y^3))/(x^2 + y^2)^2 + (6*x*y)/(x^2 + y^2)" style="vertical-align:-34px" width="233" height="88" src="section-14-3-partial-derivatives_images/math59.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">%(0,0)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(2*(x(0, 0)*y(0, 0)^3 - x(0, 0)^3*y(0, 0)))/(x(0, 0)^2 + y(0, 0)^2)^2 - (8*x(0, 0)^2*(x(0, 0)*y(0, 0)^3 - x(0, 0)^3*y(0, 0)))/(x(0, 0)^2 + y(0, 0)^2)^3 - (4*(3*x(0, 0)^2*y(0, 0) - y(0, 0)^3)*x(0, 0))/(x(0, 0)^2 + y(0, 0)^2)^2 + (6*x(0, 0)*y(0, 0))/(x(0, 0)^2 + y(0, 0)^2)" style="vertical-align:-55px" width="286" height="119" src="section-14-3-partial-derivatives_images/math60.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(((x^3)*y - x*y^3)/(x^2 + y^2), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(3*x^2*y - y^3)/(x^2 + y^2) + (2*x*(x*y^3 - x^3*y))/(x^2 + y^2)^2" style="vertical-align:-17px" width="144" height="38" src="section-14-3-partial-derivatives_images/math61.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(((x^3)*y - x*y^3)/(x^2 + y^2), y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(2*y*(x*y^3 - x^3*y))/(x^2 + y^2)^2 - (3*x*y^2 - x^3)/(x^2 + y^2)" style="vertical-align:-17px" width="144" height="38" src="section-14-3-partial-derivatives_images/math62.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(%, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(3*x^2 - 3*y^2)/(x^2 + y^2) + (2*x*(3*x*y^2 - x^3))/(x^2 + y^2)^2 - (2*y*(3*x^2*y - y^3))/(x^2 + y^2)^2 - (8*x*y*(x*y^3 - x^3*y))/(x^2 + y^2)^3" style="vertical-align:-34px" width="259" height="88" src="section-14-3-partial-derivatives_images/math63.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(((x^3)*y - x*y^3)/(x^2 + y^2), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(3*x^2*y - y^3)/(x^2 + y^2) + (2*x*(x*y^3 - x^3*y))/(x^2 + y^2)^2" style="vertical-align:-17px" width="144" height="38" src="section-14-3-partial-derivatives_images/math64.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(%, y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(3*x^2 - 3*y^2)/(x^2 + y^2) + (2*x*(3*x*y^2 - x^3))/(x^2 + y^2)^2 - (2*y*(3*x^2*y - y^3))/(x^2 + y^2)^2 - (8*x*y*(x*y^3 - x^3*y))/(x^2 + y^2)^3" style="vertical-align:-34px" width="259" height="88" src="section-14-3-partial-derivatives_images/math65.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">((x^3)*y - (x*y^3))/((x^2) + (y^2))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-(x*y^3 - x^3*y)/(x^2 + y^2)" style="vertical-align:-17px" width="68" height="38" src="section-14-3-partial-derivatives_images/math66.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">x</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="x" style="vertical-align:-7px" width="15" height="20" src="section-14-3-partial-derivatives_images/math67.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">y</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="y" style="vertical-align:-7px" width="15" height="20" src="section-14-3-partial-derivatives_images/math68.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">((x^3)*y - (x*y^3))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="x^3*y - x*y^3" style="vertical-align:-7px" width="56" height="23" src="section-14-3-partial-derivatives_images/math69.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a:=(y*z) + x * ln(y) - z^2, y</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="- z^2 + y*z + x*ln(y), y" style="vertical-align:-7px" width="106" height="23" src="section-14-3-partial-derivatives_images/math70.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a:=(y*z) + x * ln(y) - z^2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="- z^2 + y*z + x*ln(y)" style="vertical-align:-7px" width="94" height="23" src="section-14-3-partial-derivatives_images/math71.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(a, y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="z + x/y" style="vertical-align:-13px" width="33" height="26" src="section-14-3-partial-derivatives_images/math72.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">z:=q*y</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="q*y" style="vertical-align:-7px" width="24" height="20" src="section-14-3-partial-derivatives_images/math73.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(a, y)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="2*q*y - 2*q^2*y + x/y" style="vertical-align:-13px" width="91" height="29" src="section-14-3-partial-derivatives_images/math74.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1">&nbsp;</p>
+</div>
+<div class="Csep3end"></div>
+<p class="P4">&nbsp;</p>
+</body>
+</html>

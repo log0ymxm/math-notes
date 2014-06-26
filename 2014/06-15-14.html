@@ -1,0 +1,1253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>06-15-14</title>
+<style type="text/css">
+/* <![CDATA[ */
+span.S0, a.S0 { font-family:sans-serif; font-size:11pt; font-style:normal; font-weight:normal; color:#000000; }
+span.S1, a.S1 { font-family:monospace; font-size:11pt; font-style:normal; font-weight:normal; color:#ff0000; }
+span.S2, a.S2 { font-family:monospace; font-size:11pt; font-style:normal; font-weight:normal; color:#5500ff; }
+p.P0 { text-align:justify; margin-top:0pt; margin-left:0pt; margin-right:0pt; margin-bottom:0pt; text-indent:0pt; }
+p.P1 { text-align:left; white-space:pre; margin-top: 0; margin-left: 0; margin-right: 0; margin-bottom: 0; }
+div.C2 { padding-top:0pt; padding-bottom:0pt; padding-left:5.7pt; border-left-width:1pt; border-left-style: solid; border-color: #808080; border-right-width: 0; border-right-style: none; border-top-width: 0; border-top-style: none; border-bottom-width: 0; border-bottom-style: none; }
+div.Csep3in { padding: 0; height: 0; width: 5pt; border-bottom: 1px solid #808080; margin-top:2.85pt; margin-bottom: 0; }
+div.Csep3out { padding: 0; height: 0; width: 3pt; border-bottom: 1px solid #808080; margin-top: 0;  margin-bottom: 0; }
+div.Csep3end { padding: 0; height: 0; width: 5pt; border-bottom: 1px solid #808080; margin-bottom:2.85pt; margin-top: 0; }
+p.P4 { margin-top:0pt; margin-left:0pt; margin-right:0pt; margin-bottom:0pt; text-indent:0pt; }
+body { background-color:white; }
+@page { margin:56pt; size:595.3pt 841.9pt; background-color:white; }
+/* ]]> */
+</style>
+</head>
+<body>
+<p class="P0">&nbsp;</p>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">f:= 2 + x^2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="x^2 + 2" style="vertical-align:-7px" width="37" height="23" src="06-15-14_images/math0.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(f, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="2*x" style="vertical-align:-7px" width="24" height="20" src="06-15-14_images/math1.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">matrix([[0,1],[2,3]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[0, 1], [2, 3]])" style="vertical-align:-12px" width="48" height="29" src="06-15-14_images/math2.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">f:= (E^x - (a*x + b))^2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(b - exp(x) + a*x)^2" style="vertical-align:-7px" width="75" height="23" src="06-15-14_images/math3.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">gradient(f, [a, b])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[2*x*(b - exp(x) + a*x)], [2*b - 2*exp(x) + 2*a*x]])" style="vertical-align:-17px" width="111" height="42" src="06-15-14_images/math4.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, x=0..1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[(2*a)/3 + b - 2], [a + 2*b - 2*exp(1) + 2]])" style="vertical-align:-17px" width="108" height="42" src="06-15-14_images/math5.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">solve(%, [a,b])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="{[a = 18 - 6*exp(1), b = 4*exp(1) - 10]}" style="vertical-align:-7px" width="149" height="21" src="06-15-14_images/math6.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">f:= abs(E^x - (a*x + b))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="abs(b - exp(x) + a*x)" style="vertical-align:-7px" width="71" height="22" src="06-15-14_images/math7.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">gradient(f, [a,b])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[x*sign(b - exp(x) + a*x)], [sign(b - exp(x) + a*x)]])" style="vertical-align:-17px" width="118" height="42" src="06-15-14_images/math8.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[piecewise([exp(x) = b + a*x, 0], [exp(x) &lt; b + a*x, x^2/2], [b + a*x &lt; exp(x), -x^2/2], [not b + a*x &lt; exp(x) and not exp(x) &lt;= b + a*x, int(x*sign(b - exp(x) + a*x), x)])], [piecewise([exp(x) = b + a*x, 0], [exp(x) &lt; b + a*x, x], [b + a*x &lt; exp(x), -x], [not b + a*x &lt; exp(x) and not exp(x) &lt;= b + a*x, int(sign(b - exp(x) + a*x), x)])]])" style="vertical-align:-33px" width="255" height="223" src="06-15-14_images/math9.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">16^3</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="4096" style="vertical-align:-7px" width="32" height="20" src="06-15-14_images/math10.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">4^3</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="64" style="vertical-align:-7px" width="21" height="20" src="06-15-14_images/math11.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">a:=matrix([[1,1,1,1,1],[1,2,4,8,2],[1,4,16,64,3],[1,8,64,512,4]])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1, 1, 1, 1, 1], [1, 2, 4, 8, 2], [1, 4, 16, 64, 3], [1, 8, 64, 512, 4]])" style="vertical-align:-25px" width="103" height="54" src="06-15-14_images/math12.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">linalg::gaussJordan(a)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1, 0, 0, 0, -10/21], [0, 1, 0, 0, 7/4], [0, 0, 1, 0, -7/24], [0, 0, 0, 1, 1/56]])" style="vertical-align:-40px" width="101" height="83" src="06-15-14_images/math13.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">3/168</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1/56" style="vertical-align:-12px" width="23" height="27" src="06-15-14_images/math14.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">7*6*4</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="168" style="vertical-align:-7px" width="27" height="20" src="06-15-14_images/math15.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">-32 / 3</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-32/3" style="vertical-align:-12px" width="33" height="28" src="06-15-14_images/math16.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">% + 12 + 2/3</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="2" style="vertical-align:-7px" width="16" height="20" src="06-15-14_images/math17.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(x-1)*(x-2)*(x-4)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(x - 1)*(x - 2)*(x - 4)" style="vertical-align:-7px" width="109" height="21" src="06-15-14_images/math18.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(x - 1)*(x - 2)*(x - 4)" style="vertical-align:-7px" width="109" height="21" src="06-15-14_images/math19.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">3/168</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1/56" style="vertical-align:-12px" width="23" height="27" src="06-15-14_images/math20.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(2*x, x=10..13)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="69" style="vertical-align:-7px" width="21" height="20" src="06-15-14_images/math21.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(2*x, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="x^2" style="vertical-align:-7px" width="19" height="23" src="06-15-14_images/math22.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">13^2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="169" style="vertical-align:-7px" width="27" height="20" src="06-15-14_images/math23.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(x-2)*(x-4)*(x-8)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(x - 2)*(x - 4)*(x - 8)" style="vertical-align:-7px" width="109" height="21" src="06-15-14_images/math24.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(x - 2)*(x - 4)*(x - 8)" style="vertical-align:-7px" width="109" height="21" src="06-15-14_images/math25.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">poly(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="poly(x^3 - 14*x^2 + 56*x - 64, [x])" style="vertical-align:-7px" width="156" height="23" src="06-15-14_images/math26.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(1-2)*(1-4)*(1-8)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-21" style="vertical-align:-7px" width="31" height="20" src="06-15-14_images/math27.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">poly(</span><span class="S1">(x-1)*(x-4)*(x-8))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="poly(x^3 - 13*x^2 + 44*x - 32, [x])" style="vertical-align:-7px" width="156" height="23" src="06-15-14_images/math28.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">poly((x-1)*(x-2)*(x-8))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="poly(x^3 - 11*x^2 + 26*x - 16, [x])" style="vertical-align:-7px" width="156" height="23" src="06-15-14_images/math29.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">poly((x-1)*(x-2)*(x-4))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="poly(x^3 - 7*x^2 + 14*x - 8, [x])" style="vertical-align:-7px" width="146" height="23" src="06-15-14_images/math30.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(2-1)*(2-4)*(2-8)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="12" style="vertical-align:-7px" width="21" height="20" src="06-15-14_images/math31.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(4-1)*(4-2)*(4-8)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-24" style="vertical-align:-7px" width="31" height="20" src="06-15-14_images/math32.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(8-1)*(8-2)*(8-4)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="168" style="vertical-align:-7px" width="27" height="20" src="06-15-14_images/math33.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">1*((x^3 - 14*x^2 + 56*x - 64)/-21) + 2*((x^3 - 13*x^2 + 44*x - 32)/12) + 3*((x^3 - 11*x^2 + 26*x - 16)/-24) + 4*((x^3 - 7*x^2 + 14*x - 8)/168)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="x^3/56 - (7*x^2)/24 + (7*x)/4 - 10/21" style="vertical-align:-12px" width="108" height="33" src="06-15-14_images/math34.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">poly((x-1)*(x-2))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="poly(x^2 - 3*x + 2, [x])" style="vertical-align:-7px" width="111" height="23" src="06-15-14_images/math35.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">f:=poly(x + -1/6 *(x-1)*(x-2))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="poly(- x^2/6 + (3*x)/2 - 1/3, [x])" style="vertical-align:-12px" width="133" height="31" src="06-15-14_images/math36.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">f(8)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1" style="vertical-align:-7px" width="16" height="20" src="06-15-14_images/math37.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">poly(3/168 * (</span><span class="S1">(x -1)*(x-2)*(x-4)</span><span class="S1">))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="poly(x^3/56 - x^2/8 + x/4 - 1/7, [x])" style="vertical-align:-12px" width="140" height="31" src="06-15-14_images/math38.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">poly(3/168 * ((x -1)*(x-2)*(x-4)) - (x^2)/6 + (3*x)/2 - 1/3)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="poly(x^3/56 - (7*x^2)/24 + (7*x)/4 - 10/21, [x])" style="vertical-align:-13px" width="164" height="35" src="06-15-14_images/math39.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">plot(E^x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="MuPAD graphics" src="06-15-14_images/plt1.png" width="340pt" height="227pt"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">delete(a)</span></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">delete(b)</span></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">f := E^x - a*x - b</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="exp(x) - b - a*x" style="vertical-align:-7px" width="63" height="22" src="06-15-14_images/math40.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">gradient(f, [a,b])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-x], [-1]])" style="vertical-align:-15px" width="45" height="35" src="06-15-14_images/math41.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">g:= -E^x + a*x + b</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="b - exp(x) + a*x" style="vertical-align:-7px" width="63" height="22" src="06-15-14_images/math42.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">gradient(g, [a,b])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[x], [1]])" style="vertical-align:-12px" width="36" height="29" src="06-15-14_images/math43.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(</span><span class="S1">gradient(f, [a,b]), x=0..c)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[-c^2/2], [-c]])" style="vertical-align:-19px" width="53" height="48" src="06-15-14_images/math44.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(gradient(g, [a,b]), x=c..d)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[d^2/2 - c^2/2], [d - c]])" style="vertical-align:-18px" width="65" height="48" src="06-15-14_images/math45.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(gradient(f, [a,b]), x=d..1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[d^2/2 - 1/2], [d - 1]])" style="vertical-align:-18px" width="61" height="48" src="06-15-14_images/math46.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(gradient(f, [a,b]), x=0..c) + int(gradient(g, [a,b]), x=c..d) + int(gradient(f, [a,b]), x=d..1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[- c^2 + d^2 - 1/2], [2*d - 2*c - 1]])" style="vertical-align:-17px" width="90" height="43" src="06-15-14_images/math47.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">solve(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="{[c = 1/4, d = 3/4]}" style="vertical-align:-12px" width="94" height="29" src="06-15-14_images/math48.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(f, x=0..1/4)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="exp(1/4) - b/4 - a/32 - 1" style="vertical-align:-12px" width="90" height="29" src="06-15-14_images/math49.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(gradient(g, [a,b]), x=1/4..3/4)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[1/4], [1/2]])" style="vertical-align:-19px" width="37" height="42" src="06-15-14_images/math50.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">matrix([a*(1/4) + b = E^(1/4), a*(3/4) + b = E^(3/4)])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="matrix([[a/4 + b = exp(1/4)], [(3*a)/4 + b = exp(3/4)]])" style="vertical-align:-23px" width="93" height="54" src="06-15-14_images/math51.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">solve(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="{[a = 2*exp(3/4) - 2*exp(1/4), b = (3*exp(1/4))/2 - exp(3/4)/2]}" style="vertical-align:-12px" width="206" height="35" src="06-15-14_images/math52.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(2 * E^(3/4) - 2* E^(1/4)) * x + 3/2 * E^(1/4) - 1/2 * E^(3/4)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(3*exp(1/4))/2 - exp(3/4)/2 - x*(2*exp(1/4) - 2*exp(3/4))" style="vertical-align:-11px" width="163" height="33" src="06-15-14_images/math53.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">E^(log(a))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="exp(ln(a))" style="vertical-align:-7px" width="31" height="24" src="06-15-14_images/math54.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="a" style="vertical-align:-7px" width="16" height="20" src="06-15-14_images/math55.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">delete(f)</span></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">x</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="x" style="vertical-align:-7px" width="15" height="20" src="06-15-14_images/math56.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(f(x), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="diff(f(x), x)" style="vertical-align:-14px" width="47" height="29" src="06-15-14_images/math57.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">g:= x - (f(x) / diff(f(x), x)) - 1/2 * (( (f(x))^2 * diff(diff(f(x), x), x)) / (diff(f(x), x))^3)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="x - f(x)/diff(f(x), x) - (f(x)^2*diff(f(x), x, x))/(2*diff(f(x), x)^3)" style="vertical-align:-23px" width="142" height="54" src="06-15-14_images/math58.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">gprime := diff(g, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(3*f(x)^2*diff(f(x), x, x)^2)/(2*diff(f(x), x)^4) - (f(x)^2*diff(f(x), x, x, x))/(2*diff(f(x), x)^3)" style="vertical-align:-23px" width="185" height="56" src="06-15-14_images/math59.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff((f(x))^2 * diff(diff(f(x), x),x), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="f(x)^2*diff(f(x), x, x, x) + 2*f(x)*diff(f(x), x, x)*diff(f(x), x)" style="vertical-align:-17px" width="203" height="36" src="06-15-14_images/math60.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff( (diff(f(x), x))^3 , x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="3*diff(f(x), x)^2*diff(f(x), x, x)" style="vertical-align:-17px" width="118" height="36" src="06-15-14_images/math61.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(</span><span class="S1">- 1/2 * (( (f(x))^2 * diff(diff(f(x), x), x)) / (diff(f(x), x))^3), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(3*f(x)^2*diff(f(x), x, x)^2)/(2*diff(f(x), x)^4) - (f(x)^2*diff(f(x), x, x, x))/(2*diff(f(x), x)^3) - (f(x)*diff(f(x), x, x))/diff(f(x), x)^2" style="vertical-align:-23px" width="260" height="56" src="06-15-14_images/math62.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff((f(x))^2 * diff(diff(f(x), x),x), x) * (diff(f(x), x))^3</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="diff(f(x), x)^3*(f(x)^2*diff(f(x), x, x, x) + 2*f(x)*diff(f(x), x, x)*diff(f(x), x))" style="vertical-align:-17px" width="277" height="36" src="06-15-14_images/math63.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(f(x))^2 * diff(diff(f(x), x),x) * diff( (diff(f(x), x))^3 , x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="3*f(x)^2*diff(f(x), x)^2*diff(f(x), x, x)^2" style="vertical-align:-17px" width="165" height="36" src="06-15-14_images/math64.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(diff((f(x))^2 * diff(diff(f(x), x),x), x) * (diff(f(x), x))^3 - (f(x))^2 * diff(diff(f(x), x),x) * diff( (diff(f(x), x))^3 , x))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="diff(f(x), x)^3*(f(x)^2*diff(f(x), x, x, x) + 2*f(x)*diff(f(x), x, x)*diff(f(x), x)) - 3*f(x)^2*diff(f(x), x)^2*diff(f(x), x, x)^2" style="vertical-align:-17px" width="444" height="36" src="06-15-14_images/math65.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(diff((f(x))^2 * diff(diff(f(x), x),x), x) * (diff(f(x), x))^3 - (f(x))^2 * diff(diff(f(x), x),x) * diff( (diff(f(x), x))^3 , x)) / (diff(f(x), x))^6</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(diff(f(x), x)^3*(f(x)^2*diff(f(x), x, x, x) + 2*f(x)*diff(f(x), x, x)*diff(f(x), x)) - 3*f(x)^2*diff(f(x), x)^2*diff(f(x), x, x)^2)/diff(f(x), x)^6" style="vertical-align:-23px" width="428" height="56" src="06-15-14_images/math66.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(f(x)^2*diff(f(x), x, x, x)*diff(f(x), x) - 3*f(x)^2*diff(f(x), x, x)^2 + 2*f(x)*diff(f(x), x)^2*diff(f(x), x, x))/diff(f(x), x)^4" style="vertical-align:-23px" width="357" height="56" src="06-15-14_images/math67.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">gprimeprime := diff(gprime, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(3*f(x)*diff(f(x), x, x)^2)/diff(f(x), x)^3 - (6*f(x)^2*diff(f(x), x, x)^3)/diff(f(x), x)^5 - (f(x)^2*diff(f(x), x, x, x, x))/(2*diff(f(x), x)^3) - (f(x)*diff(f(x), x, x, x))/diff(f(x), x)^2 + (9*f(x)^2*diff(f(x), x, x, x)*diff(f(x), x, x))/(2*diff(f(x), x)^4)" style="vertical-align:-89px" width="286" height="188" src="06-15-14_images/math68.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">gprime - gprimeprime</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(f(x)*diff(f(x), x, x, x))/diff(f(x), x)^2 + (3*f(x)^2*diff(f(x), x, x)^2)/(2*diff(f(x), x)^4) + (6*f(x)^2*diff(f(x), x, x)^3)/diff(f(x), x)^5 - (f(x)^2*diff(f(x), x, x, x))/(2*diff(f(x), x)^3) + (f(x)^2*diff(f(x), x, x, x, x))/(2*diff(f(x), x)^3) - (3*f(x)*diff(f(x), x, x)^2)/diff(f(x), x)^3 - (9*f(x)^2*diff(f(x), x, x)*diff(f(x), x, x, x))/(2*diff(f(x), x)^4)" style="vertical-align:-106px" width="381" height="223" src="06-15-14_images/math69.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(f(x)*(f(x)*diff(f(x), x)^2*diff(f(x), x, x, x, x) + 2*diff(f(x), x)^3*diff(f(x), x, x, x) - f(x)*diff(f(x), x)^2*diff(f(x), x, x, x) - 9*f(x)*diff(f(x), x, x)*diff(f(x), x)*diff(f(x), x, x, x) + 12*f(x)*diff(f(x), x, x)^3 - 6*diff(f(x), x)^2*diff(f(x), x, x)^2 + 3*f(x)*diff(f(x), x, x)^2*diff(f(x), x)))/(2*diff(f(x), x)^5)" style="vertical-align:-91px" width="435" height="188" src="06-15-14_images/math70.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">f'(x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="D(f)(x)" style="vertical-align:-8px" width="33" height="22" src="06-15-14_images/math71.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">diff(%, x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="diff(D(f)(x), x)" style="vertical-align:-14px" width="50" height="29" src="06-15-14_images/math72.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">f''(x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(D@@2)(f)(x)" style="vertical-align:-8px" width="36" height="22" src="06-15-14_images/math73.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">f'''(x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(D@@3)(f)(x)" style="vertical-align:-8px" width="38" height="22" src="06-15-14_images/math74.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">f:= 1-b</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1 - b" style="vertical-align:-7px" width="34" height="20" src="06-15-14_images/math75.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">g:= E - a - b</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="exp(1) - b - a" style="vertical-align:-7px" width="51" height="20" src="06-15-14_images/math76.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">h:= a - a* log(a) - b</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="a - b - a*ln(a)" style="vertical-align:-7px" width="78" height="21" src="06-15-14_images/math77.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">solve([f, g, h])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="{}" style="vertical-align:-7px" width="19" height="20" src="06-15-14_images/math78.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">1 / (1 + x^2)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1/(x^2 + 1)" style="vertical-align:-17px" width="39" height="32" src="06-15-14_images/math79.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%,x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="arctan(x)" style="vertical-align:-7px" width="50" height="21" src="06-15-14_images/math80.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(E^(- x^2 / 2), x)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(2^(1/2)*PI^(1/2)*erf((2^(1/2)*x)/2))/2" style="vertical-align:-11px" width="91" height="33" src="06-15-14_images/math81.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">f:= piecewise([x*y &gt; 0, x*y], [x*y &lt;= 0, 0])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="piecewise([0 &lt; x*y, x*y], [x*y &lt;= 0, 0])" style="vertical-align:-15px" width="87" height="35" src="06-15-14_images/math82.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">plot(f)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="MuPAD graphics" src="06-15-14_images/plt5.png" width="340pt" height="227pt"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">f:= (x^2 * y) / (x^4 + y^2)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(x^2*y)/(x^4 + y^2)" style="vertical-align:-17px" width="42" height="38" src="06-15-14_images/math83.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">plot(f)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="MuPAD graphics" src="06-15-14_images/plt6.png" width="340pt" height="227pt"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">plot(1/(t+1) * cos(t), t=0..20)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="MuPAD graphics" src="06-15-14_images/plt9.png" width="340pt" height="227pt"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">plot(1/(t+1) * sin(t), t=0..20)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="MuPAD graphics" src="06-15-14_images/plt11.png" width="340pt" height="227pt"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">plot([1/(t+1) * cos(t),1/(t+1) * sin(t) ], t=0..20)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="MuPAD graphics" src="06-15-14_images/plt14.png" width="340pt" height="227pt"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">f:= t^2 - t + 1/4</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="t^2 - t + 1/4" style="vertical-align:-11px" width="52" height="27" src="06-15-14_images/math84.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(f, t=0..1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="1/12" style="vertical-align:-11px" width="23" height="26" src="06-15-14_images/math85.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">sqrt(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="3^(1/2)/6" style="vertical-align:-12px" width="28" height="31" src="06-15-14_images/math86.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">sqrt(12)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="2*3^(1/2)" style="vertical-align:-7px" width="35" height="21" src="06-15-14_images/math87.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">1/(2*sqrt(3))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="3^(1/2)/6" style="vertical-align:-12px" width="28" height="31" src="06-15-14_images/math88.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(E^t, t=0..1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="exp(1) - 1" style="vertical-align:-7px" width="33" height="20" src="06-15-14_images/math89.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">3/sqrt(3)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="3^(1/2)" style="vertical-align:-7px" width="26" height="21" src="06-15-14_images/math90.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(x-(1/2))/sqrt(1/12)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="2*3^(1/2)*(x - 1/2)" style="vertical-align:-13px" width="77" height="29" src="06-15-14_images/math91.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">f:= E^t * 2*t - E^t</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="2*t*exp(t) - exp(t)" style="vertical-align:-7px" width="51" height="22" src="06-15-14_images/math92.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(f, t=0..1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="3 - exp(1)" style="vertical-align:-7px" width="33" height="20" src="06-15-14_images/math93.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(E^t * 2 * t, t=0..1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="2" style="vertical-align:-7px" width="16" height="20" src="06-15-14_images/math94.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">E^x - E + 1 - 18*x + 6*E*x + 9 - 3*E</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="exp(x) - 4*exp(1) - 18*x + 6*x*exp(1) + 10" style="vertical-align:-7px" width="133" height="22" src="06-15-14_images/math95.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">E^x - int(E^t, t=0..1) - (sqrt(3)*(2*x - 1))*int(E^t * sqrt(3) * (2*t - 1), t=0..1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="exp(x) - exp(1) + 3*(2*x - 1)*(exp(1) - 3) + 1" style="vertical-align:-7px" width="149" height="22" src="06-15-14_images/math96.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="exp(x) - exp(1) + 3*(2*x - 1)*(exp(1) - 3) + 1" style="vertical-align:-7px" width="149" height="22" src="06-15-14_images/math97.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">(E^x - 4*E - 18*x + 6*E*x + 10)*</span><span class="S1">(E^x - 4*E - 18*x + 6*E*x + 10)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(exp(x) - 4*exp(1) - 18*x + 6*x*exp(1) + 10)^2" style="vertical-align:-7px" width="145" height="23" src="06-15-14_images/math98.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(exp(x) - 4*exp(1) - 18*x + 6*x*exp(1) + 10)^2" style="vertical-align:-7px" width="145" height="23" src="06-15-14_images/math99.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">norm(</span><span class="S1">E^x - 4*E - 18*x + 6*E*x + 10, 2)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="2.149301263" style="vertical-align:-7px" width="68" height="20" src="06-15-14_images/math100.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">18*4</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="72" style="vertical-align:-7px" width="21" height="20" src="06-15-14_images/math101.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">18^2</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="324" style="vertical-align:-7px" width="27" height="20" src="06-15-14_images/math102.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">18*6</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="108" style="vertical-align:-7px" width="27" height="20" src="06-15-14_images/math103.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">E^x * E</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="exp(1)*exp(x)" style="vertical-align:-7px" width="27" height="22" src="06-15-14_images/math104.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">E^(2*x) - 4*E^x * E - 18*E^x *x + 6 * E^x * E * x + 10* E^x - 4*E^x * E + 16*E^2 + 72*E*x - 24* E^2 * x - 40*E - 18*E^x * x + 72*E*x + 324*x^2 - 108*E*x^2 - 180*x + 6*E^x*E*x - 24*E^2*x - 108*E*x^2 + 36*E^2 * x^2 + 60*E*x + 10*E^x -40*E - 180*x + 60*E*x + 100</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="exp(2*x) - 360*x - 80*exp(1) + 16*exp(2) + 20*exp(x) + 264*x*exp(1) - 48*x*exp(2) - 216*x^2*exp(1) + 36*x^2*exp(2) - 8*exp(1)*exp(x) - 36*x*exp(x) + 324*x^2 + 12*x*exp(1)*exp(x) + 100" style="vertical-align:-27px" width="520" height="44" src="06-15-14_images/math105.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(%, x=0..1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="20*exp(1) - (7*exp(2))/2 - 57/2" style="vertical-align:-11px" width="86" height="32" src="06-15-14_images/math106.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">sqrt(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(20*exp(1) - (7*exp(2))/2 - 57/2)^(1/2)" style="vertical-align:-12px" width="97" height="35" src="06-15-14_images/math107.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">float(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="0.06277119502" style="vertical-align:-7px" width="78" height="20" src="06-15-14_images/math108.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">f:=&nbsp; E^x - 4*E - 18*x + 6*E*x + 10</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="exp(x) - 4*exp(1) - 18*x + 6*x*exp(1) + 10" style="vertical-align:-7px" width="133" height="22" src="06-15-14_images/math109.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">f / sqrt(int(f^2, x=0..1))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(exp(x) - 4*exp(1) - 18*x + 6*x*exp(1) + 10)/(20*exp(1) - (7*exp(2))/2 - 57/2)^(1/2)" style="vertical-align:-23px" width="135" height="43" src="06-15-14_images/math110.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">simplify(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(2^(1/2)*(exp(x) - 4*exp(1) - 18*x + 6*x*exp(1) + 10))/(40*exp(1) - 7*exp(2) - 57)^(1/2)" style="vertical-align:-23px" width="162" height="43" src="06-15-14_images/math111.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">f:=piecewise([-PI &lt; t &lt; 0, 1], [0 &lt;= t &lt;= PI, -1])</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="piecewise([t in Dom::Interval([0], [PI]), -1], [t in Dom::Interval(-PI, 0), 1])" style="vertical-align:-18px" width="114" height="42" src="06-15-14_images/math112.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">plot(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="MuPAD graphics" src="06-15-14_images/plt16.png" width="340pt" height="227pt"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">fourier(f, t, n)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="fourier(piecewise([t in Dom::Interval([0], [PI]), -1], [t in Dom::Interval(-PI, 0), 1]), t, n)" style="vertical-align:-18px" width="185" height="42" src="06-15-14_images/math113.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">plot(sum(2/PI * sin(n*t), n=1..100))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="MuPAD graphics" src="06-15-14_images/plt18.png" width="340pt" height="227pt"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">sum(2/PI * sin(n*t), n=1..10)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(2*sin(2*t))/PI + (2*sin(3*t))/PI + (2*sin(4*t))/PI + (2*sin(5*t))/PI + (2*sin(6*t))/PI + (2*sin(7*t))/PI + (2*sin(8*t))/PI + (2*sin(9*t))/PI + (2*sin(10*t))/PI + (2*sin(t))/PI" style="vertical-align:-41px" width="507" height="60" src="06-15-14_images/math114.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(sin(n*t), t=-PI..0)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="(cos(PI*n) - 1)/n" style="vertical-align:-11px" width="68" height="30" src="06-15-14_images/math115.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(-sin(n*t), t=0..PI)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="-(2*sin((PI*n)/2)^2)/n" style="vertical-align:-11px" width="68" height="34" src="06-15-14_images/math116.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">f:= sum(2/(PI*n) * ((-1)^n - 1) * sin(n*t), n=1..100)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="- (4*sin(3*t))/(3*PI) - (4*sin(5*t))/(5*PI) - (4*sin(7*t))/(7*PI) - (4*sin(9*t))/(9*PI) - (4*sin(11*t))/(11*PI) - (4*sin(13*t))/(13*PI) - (4*sin(15*t))/(15*PI) - (4*sin(17*t))/(17*PI) - (4*sin(19*t))/(19*PI) - (4*sin(21*t))/(21*PI) - (4*sin(23*t))/(23*PI) - (4*sin(25*t))/(25*PI) - (4*sin(27*t))/(27*PI) - (4*sin(29*t))/(29*PI) - (4*sin(31*t))/(31*PI) - (4*sin(33*t))/(33*PI) - (4*sin(35*t))/(35*PI) - (4*sin(37*t))/(37*PI) - (4*sin(39*t))/(39*PI) - (4*sin(41*t))/(41*PI) - (4*sin(43*t))/(43*PI) - (4*sin(45*t))/(45*PI) - (4*sin(47*t))/(47*PI) - (4*sin(49*t))/(49*PI) - (4*sin(51*t))/(51*PI) - (4*sin(53*t))/(53*PI) - (4*sin(55*t))/(55*PI) - (4*sin(57*t))/(57*PI) - (4*sin(59*t))/(59*PI) - (4*sin(61*t))/(61*PI) - (4*sin(63*t))/(63*PI) - (4*sin(65*t))/(65*PI) - (4*sin(67*t))/(67*PI) - (4*sin(69*t))/(69*PI) - (4*sin(71*t))/(71*PI) - (4*sin(73*t))/(73*PI) - (4*sin(75*t))/(75*PI) - (4*sin(77*t))/(77*PI) - (4*sin(79*t))/(79*PI) - (4*sin(81*t))/(81*PI) - (4*sin(83*t))/(83*PI) - (4*sin(85*t))/(85*PI) - (4*sin(87*t))/(87*PI) - (4*sin(89*t))/(89*PI) - (4*sin(91*t))/(91*PI) - (4*sin(93*t))/(93*PI) - (4*sin(95*t))/(95*PI) - (4*sin(97*t))/(97*PI) - (4*sin(99*t))/(99*PI) - (4*sin(t))/PI" style="vertical-align:-212px" width="507" height="231" src="06-15-14_images/math117.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">plot(f)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="MuPAD graphics" src="06-15-14_images/plt20.png" width="340pt" height="227pt"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">fourier(cos(x+1), x, w)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="PI*(dirac(w - 1)*exp(I) + dirac(w + 1)*exp(-I))" style="vertical-align:-7px" width="143" height="24" src="06-15-14_images/math118.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">plot(%)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="MuPAD graphics" src="06-15-14_images/plt21.png" width="340pt" height="227pt"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">plot(cos(x+1))</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="MuPAD graphics" src="06-15-14_images/plt25.png" width="340pt" height="227pt"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(cos(t+1) * cos(n*t), t=-PI-1..PI-1)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="piecewise([n in {-1, 1}, PI*cos(1)], [not n in {-1, 1}, -(2*n*sin(PI*n)*cos(n))/(n^2 - 1)])" style="vertical-align:-25px" width="178" height="49" src="06-15-14_images/math119.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(cos(t+1) * sin(n*t), t=-PI..PI)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="piecewise([n = 1, -PI*sin(1)], [n = -1, PI*sin(1)], [not n in {-1, 1}, (2*sin(1)*sin(PI*n))/(n^2 - 1)])" style="vertical-align:-35px" width="160" height="68" src="06-15-14_images/math120.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(cos(t) * cos(n*t), t=-1-PI..-1+PI)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="piecewise([n in {-1, 1}, PI], [not n in {-1, 1}, -(2*sin(PI*n)*(sin(1)*sin(n) + n*cos(1)*cos(n)))/(n^2 - 1)])" style="vertical-align:-25px" width="253" height="49" src="06-15-14_images/math121.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1"><span class="S1">int(cos(t) * sin(n*t), t=-1-PI..-1+PI)</span></p>
+</div>
+<div class="Csep3out"></div>
+<div class="C2">
+<p class="P1"><img alt="piecewise([n in {-1, 1}, 0], [not n in {-1, 1}, -(2*sin(PI*n)*(sin(1)*cos(n) - n*cos(1)*sin(n)))/(n^2 - 1)])" style="vertical-align:-25px" width="253" height="49" src="06-15-14_images/math122.png"></img></p>
+</div>
+<div class="Csep3end"></div>
+<div class="Csep3in"></div>
+<div class="C2">
+<p class="P1">&nbsp;</p>
+</div>
+<div class="Csep3end"></div>
+<p class="P4">&nbsp;</p>
+</body>
+</html>
